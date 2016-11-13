@@ -28,6 +28,10 @@ textarea {
     width: 100%;
 }
 
+.space-above {
+    margin-top: 20px;
+}
+
 .centralized {
     text-align: center;
 }
