@@ -1,2 +1,2 @@
-# sg-dotnet.github.io
-For the community website at https://sg-dotnet.github.io
+# Singapore .NET Developer Community
+For the community website at http://sg-dotnet.azurewebsites.net/.
