@@ -1,61 +1,64 @@
 @{ ViewData["Title"] = "Home Page"; }
 
-<div class="container space-above">
-    <div class="row">
-        <div class="col-sm-4 centralized">
-            <img src="~/images/community-logo.png" alt="Singapore .NET Developer Community" />
-        </div>
+<div>
+    <div class="container">
 
-        <div class="col-sm-8">
-            <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                        <img src="~/images/meetup-banner-1.jpg" alt="Beginners, expert, masters, start-ups, students are welcomed to join this group." class="img-responsive" />
-                        <div class="carousel-caption" role="option">
-                            <p>
-                                Beginners, expert, masters, start-ups, students are welcomed to join this group.
-                                <a class="btn btn-success" href="https://www.meetup.com/NET-Developers-SG">
-                                    Join Us!
-                                </a>
-                            </p>
-                        </div>
+        <div class="hero-banner">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="hero-banner-header">
+                        Singapore .NET Developers Community
                     </div>
-                    <div class="item">
-                        <img src="~/images/meetup-banner-2.jpg" alt="Invoke-RestMethod usage with IoT devices and PowerShell Core." class="img-responsive" />
-                        <div class="carousel-caption" role="option">
-                            <p>
-                                Learn Invoke-RestMethod usage with IoT devices and PowerShell Core.
-                                <a class="btn btn-success" href="https://www.meetup.com/NET-Developers-SG/events/234961113/">
-                                    Learn More
-                                </a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="~/images/meetup-banner-3.jpg" alt="We as the .NET developers community can do more, helping others who wants to learn .NET as well." class="img-responsive" />
-                        <div class="carousel-caption" role="option">
-                            <p>
-                                We as the .NET developers community can do more, helping others who wants to learn .NET as well.
-                                <a class="btn btn-default" href="https://web.facebook.com/groups/sg.netdev/">
-                                    Learn More
-                                </a>
-                            </p>
-                        </div>
+                    <div class="hero-banner-title">
+                        Empowering Talents To Make Real Impact with .NET Technologies
                     </div>
                 </div>
-                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+
+            </div>
+        </div>
+
+        <div id="about" class="info-section info-section-light-blue">
+            <div class="info-section-header">
+                About Us
+            </div>
+            <div class="info-section-description">
+                <p>
+                    In November 2014, Microsoft has announced that .NET are now Open Source. Even though the process is still going on, 
+                    but we eventually sees that the .NET ecosystem are still strong and getting stronger. The new Open Source .NET will 
+                    also merge some of other developers using other platform like Linux and Mac OS to learn and utilize .NET.
+                </p>
+
+                <p>
+                    In Singapore, this .NET ecosystem has not been as good as other countries. Does not mean there is no .NET developers 
+                    or enterprises not using .NET. In fact most enterprises in Singapore using .NET for their development.
+                </p>
+
+                <p>
+                    So, we as the .NET developers community can do more, helping others who wants to learn .NET as well. Just imagine, 
+                    all of your .NET codes can just be run in other platform as well. No matter what OS they use, .NET can be executed.
+                </p>
+
+                <p>
+                    We invite all of .NET developers based in Singapore to join this community and learn .NET starting from beginners 
+                    to advanced. I was hoping we can share the knowledge on .NET or .NET related ecosystem such as using Microsoft Azure + .NET.
+                </p>
+
+                <p>
+                    Join us and you can also get the latest news and -- probably --what's new in .NET future, even before announce in the media.
+                </p>
+
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6">
+                        <img class="full-width-img" src="images/meetup-banner-1.jpg" alt="Free C# Training (Beginners) For Non .NET Developers" />
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <img class="full-width-img" src="images/meetup-banner-4.png" alt="Rita Zhang and Bhargav Nookala on Building Blocks on Building Bots"
+                        />
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <img class="full-width-img" src="images/meetup-banner-3.jpg" alt=".NET Experts always welcome audience to ask deep questions on C#/.NET in the meetup." />
+                    </div>
+                </div>
             </div>
         </div>
     </div>
