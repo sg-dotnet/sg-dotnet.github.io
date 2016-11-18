@@ -1,14 +1,10 @@
 [
   {
-    "outputFileName": "wwwroot/css/site.min.css",
+    "outputFileName": "wwwroot/css/custom.min.css",
     "inputFiles": [
-      "wwwroot/css/site.css"
-    ]
-  },
-  {
-    "outputFileName": "wwwroot/css/show-more.min.css",
-    "inputFiles": [
-      "wwwroot/css/show-more.css"
+      "wwwroot/css/site.css",
+      "wwwroot/css/show-more.css",
+      "wwwroot/css/popup-image.css"
     ]
   },
   {
