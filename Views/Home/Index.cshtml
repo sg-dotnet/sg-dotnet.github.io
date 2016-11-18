@@ -1,10 +1,4 @@
-@using CommunityWeb.Models;
-
 @{ ViewData["Title"] = "Home Page"; }
-
-@{
-    var meetupEvents = (IEnumerable<MeetupEvent>)ViewBag.MeetupEvents;
-}
 
 <div>
     <div class="hero-banner">
@@ -81,80 +75,5 @@
             </div>
         </div>
     </div>
-
-    <div id="meetups" class="info-section">
-        <div class="container">
-            <div class="info-section-header">
-                <h2>Tech Meetups</h2>
-            </div>
-            <div class="info-section-description">
-                @foreach(var individualEvent in meetupEvents) 
-                {
-                    <div class="row">
-                        <div class="col-md-8">
-                            <h3>
-                                <a href="@individualEvent.MeetupPageUrl" target="_blank">@individualEvent.Name</a>
-                                <span class="larger-inline-spacing"></span>
-                                @if (individualEvent.HappensAtDateTime >= DateTime.Now) {
-                                    <a href="individualEvent.MeetupPageUrl" class="btn btn-success" role="button" target="_blank"><i class="fa fa-thumbs-up"></i> Join Us!</a>
-                                } else {
-                                    <a href="javascript:;" class="btn btn-danger disabled" role="button">Event is over.</a>
-                                }
-                                
-                            </h3>
-                            <p class="help-block">
-                                <i class="fa fa-calendar-o"></i> @individualEvent.HappensAtDateTime.ToString("yyyy-MM-dd HH:mm")
-                                <span class="larger-inline-spacing"></span>
-                                <i class="fa fa-users"></i> @individualEvent.NumberOfRsvpCount participant@(individualEvent.NumberOfRsvpCount == 1 ? "" : "s")
-                            </p>
-                            <p class="help-block">@Html.Raw(individualEvent.Venue)</p>
-
-                            <div class="event-description show-more-section">
-                                @Html.Raw(individualEvent.Description)
-                            </div>
-                            
-                        </div>
-                        
-                        <div class="col-md-4">
-                            <div id="map-canvas-@individualEvent.Id" class="event-map"></div>
-                        </div>
-                    </div>
-                }
-            </div>
-        </div>
-    </div>
 </div>
-
-@section scripts {
-    <script>
-
-        @foreach(var individualEvent in meetupEvents) 
-        {
-            <text>
-            function initializeMap_@(individualEvent.Id)() {
-                var myLatlng = new google.maps.LatLng(@individualEvent.Venue.Latitude, @individualEvent.Venue.Longitude);
-                var mapOptions = {
-                    scrollwheel: false,
-                    center: myLatlng,
-                    zoom: 16
-                };
-
-                var map = new google.maps.Map(document.getElementById('map-canvas-@individualEvent.Id'),
-                    mapOptions);
-
-                var marker = new google.maps.Marker({
-                    position: myLatlng,
-                    map: map,
-                    title: '@individualEvent.Name'
-                });
-            }
-            google.maps.event.addDomListener(window, 'load', initializeMap_@individualEvent.Id);
-            </text>
-        }
-        
-        
-        $('.show-more-section').showmore({collapsedHeight: '400px',});
-    </script>
-}
-
 

@@ -1,6 +1,3 @@
-using System;
-using Newtonsoft.Json;
-
 namespace CommunityWeb.Models
 {
     public class AppSettings
