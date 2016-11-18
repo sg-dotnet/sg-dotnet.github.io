@@ -1,46 +1,54 @@
+@using CommunityWeb.Models;
+
 @{ ViewData["Title"] = "Home Page"; }
 
+@{
+    var meetupEvents = (IEnumerable<MeetupEvent>)ViewBag.MeetupEvents;
+}
+
 <div>
-    <div class="container">
-
-        <div class="hero-banner">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="hero-banner-header">
-                        Singapore .NET Developers Community
-                    </div>
-                    <div class="hero-banner-title">
-                        Empowering Talents To Make Real Impact with .NET Technologies
-                    </div>
+    <div class="hero-banner">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="hero-banner-header">
+                    Singapore .NET Developers Community
+                </h1>
+                <div class="hero-banner-title">
+                    Empowering Talents To Make Real Impact with .NET Technologies
                 </div>
-
             </div>
-        </div>
 
-        <div id="about" class="info-section info-section-light-blue">
+        </div>
+    </div>
+
+    <div id="about" class="info-section info-section-light-blue">
+        <div class="container">
             <div class="info-section-header">
-                About Us
+                <img src="/images/community-logo.png" alt="About Us" class="img-rounded" />
+                <h2>About Us</h2>
             </div>
             <div class="info-section-description">
                 <p>
-                    In November 2014, Microsoft has announced that .NET are now Open Source. Even though the process is still going on, 
-                    but we eventually sees that the .NET ecosystem are still strong and getting stronger. The new Open Source .NET will 
-                    also merge some of other developers using other platform like Linux and Mac OS to learn and utilize .NET.
+                    In November 2014, Microsoft has announced that .NET are now Open Source. Even though the process is still going on, but we
+                    eventually sees that the .NET ecosystem are still strong and getting stronger. The new Open Source .NET
+                    will also merge some of other developers using other platform like Linux and Mac OS to learn and utilize
+                    .NET.
                 </p>
 
                 <p>
-                    In Singapore, this .NET ecosystem has not been as good as other countries. Does not mean there is no .NET developers 
-                    or enterprises not using .NET. In fact most enterprises in Singapore using .NET for their development.
+                    In Singapore, this .NET ecosystem has not been as good as other countries. Does not mean there is no .NET developers or enterprises
+                    not using .NET. In fact most enterprises in Singapore using .NET for their development.
                 </p>
 
                 <p>
-                    So, we as the .NET developers community can do more, helping others who wants to learn .NET as well. Just imagine, 
-                    all of your .NET codes can just be run in other platform as well. No matter what OS they use, .NET can be executed.
+                    So, we as the .NET developers community can do more, helping others who wants to learn .NET as well. Just imagine, all of
+                    your .NET codes can just be run in other platform as well. No matter what OS they use, .NET can be executed.
                 </p>
 
                 <p>
-                    We invite all of .NET developers based in Singapore to join this community and learn .NET starting from beginners 
-                    to advanced. I was hoping we can share the knowledge on .NET or .NET related ecosystem such as using Microsoft Azure + .NET.
+                    We invite all of .NET developers based in Singapore to join this community and learn .NET starting from beginners to advanced.
+                    I was hoping we can share the knowledge on .NET or .NET related ecosystem such as using Microsoft Azure
+                    + .NET.
                 </p>
 
                 <p>
@@ -49,17 +57,104 @@
 
                 <div class="row">
                     <div class="col-lg-4 col-sm-6">
-                        <img class="full-width-img" src="images/meetup-banner-1.jpg" alt="Free C# Training (Beginners) For Non .NET Developers" />
+                        <figure>
+                            <img class="full-width-img img-thumbnail popup-image" src="images/meetup-banner-1.jpg" alt="Free C# Training (Beginners) for Non .NET Developers."
+                            />
+                            <figcaption>Free C# Training (Beginners) for Non .NET Developers.</figcaption>
+                        </figure>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <img class="full-width-img" src="images/meetup-banner-4.png" alt="Rita Zhang and Bhargav Nookala on Building Blocks on Building Bots"
-                        />
+                        <figure>
+                            <img class="full-width-img img-thumbnail popup-image" src="images/meetup-banner-4.png" alt="Rita Zhang and Bhargav Nookala on Building Blocks on Building Bots."
+                            />
+                            <figcaption>Rita Zhang and Bhargav Nookala on Building Blocks on Building Bots.</figcaption>
+                        </figure>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <img class="full-width-img" src="images/meetup-banner-3.jpg" alt=".NET Experts always welcome audience to ask deep questions on C#/.NET in the meetup." />
+                        <figure>
+                            <img class="full-width-img img-thumbnail popup-image" src="images/meetup-banner-3.jpg" alt=".NET experts always welcome audience to ask deep questions on C#/.NET in the meetup."
+                            />
+                            <figcaption>.NET experts always welcome audience to ask deep questions on C#/.NET in the meetup.</figcaption>
+                        </figure>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <div id="meetups" class="info-section">
+        <div class="container">
+            <div class="info-section-header">
+                <h2>Tech Meetups</h2>
+            </div>
+            <div class="info-section-description">
+                @foreach(var individualEvent in meetupEvents) 
+                {
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h3>
+                                <a href="@individualEvent.MeetupPageUrl" target="_blank">@individualEvent.Name</a>
+                                <span class="larger-inline-spacing"></span>
+                                @if (individualEvent.HappensAtDateTime >= DateTime.Now) {
+                                    <a href="individualEvent.MeetupPageUrl" class="btn btn-success" role="button" target="_blank"><i class="fa fa-thumbs-up"></i> Join Us!</a>
+                                } else {
+                                    <a href="javascript:;" class="btn btn-danger disabled" role="button">Event is over.</a>
+                                }
+                                
+                            </h3>
+                            <p class="help-block">
+                                <i class="fa fa-calendar-o"></i> @individualEvent.HappensAtDateTime.ToString("yyyy-MM-dd HH:mm")
+                                <span class="larger-inline-spacing"></span>
+                                <i class="fa fa-users"></i> @individualEvent.NumberOfRsvpCount participant@(individualEvent.NumberOfRsvpCount == 1 ? "" : "s")
+                            </p>
+                            <p class="help-block">@Html.Raw(individualEvent.Venue)</p>
+
+                            <div class="event-description show-more-section">
+                                @Html.Raw(individualEvent.Description)
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div id="map-canvas-@individualEvent.Id" class="event-map"></div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
 </div>
+
+@section scripts {
+    <script>
+
+        @foreach(var individualEvent in meetupEvents) 
+        {
+            <text>
+            function initializeMap_@(individualEvent.Id)() {
+                var myLatlng = new google.maps.LatLng(@individualEvent.Venue.Latitude, @individualEvent.Venue.Longitude);
+                var mapOptions = {
+                    scrollwheel: false,
+                    center: myLatlng,
+                    zoom: 16
+                };
+
+                var map = new google.maps.Map(document.getElementById('map-canvas-@individualEvent.Id'),
+                    mapOptions);
+
+                var marker = new google.maps.Marker({
+                    position: myLatlng,
+                    map: map,
+                    title: '@individualEvent.Name'
+                });
+            }
+            google.maps.event.addDomListener(window, 'load', initializeMap_@individualEvent.Id);
+            </text>
+        }
+        
+        
+        $('.show-more-section').showmore({collapsedHeight: '400px',});
+    </script>
+}
+
+

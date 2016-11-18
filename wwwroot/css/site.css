@@ -2,7 +2,7 @@ html, body { overflow-x: hidden; }
 
 body {
     padding-top: 50px;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 a {
@@ -22,8 +22,8 @@ legend {
 
 .btn-theme {
     color: #ffffff;
-    background-color: rgb(9, 130, 236);
-    border-color: rgb(9, 130, 236);
+    background-color: #c675de;
+    border-color: #c675de;
     font-size: 14px;
     font-weight: bold;
     padding: 4px 14px !important;
@@ -34,10 +34,11 @@ legend {
 }
 
 .hero-banner {
-    border-top: 4px solid rgb(9, 130, 236);
+    border-top: 4px solid #c675de;
     background-image: url('../images/meetup-banner-2.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: 0 30%; 
     height: 420px;
 }
 
@@ -79,8 +80,8 @@ legend {
 
 .btn-theme-submit {
     color: #ffffff;
-    background-color: rgb(9, 130, 236);
-    border-color: rgb(9, 130, 236);
+    background-color: #c675de;
+    border-color: #c675de;
     font-size: 24px;
     font-weight: bold;
     padding: 4px 14px !important;
@@ -118,7 +119,7 @@ legend {
 }
 
 .info-section {
-    padding: 20px 20px;
+    padding: 60px 20px;
 }
 
 .info-section-light-blue {
@@ -127,6 +128,38 @@ legend {
 
 .info-section-description {
     margin-top: 10px;
+}
+
+.larger-inline-spacing{
+    margin-left: 30px;
+}
+
+.event-description > p{
+    font-size: 12px;
+}
+
+.event-map{
+    height: 400px; 
+    width: 100%; 
+    margin-top: 10px;
+}
+
+.extender{
+    text-align: center; 
+    border-bottom: 1px solid #dedede;
+    margin-bottom: 30px;
+}
+
+a.more-btn-home, .more-btn-home {
+    background-color: #333;
+    cursor: pointer;
+    border: 1px solid #000;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 5px 5px 0 0;
+    display: inline-block;
+    padding: 5px 8px;
 }
 
 .item-card {
@@ -141,7 +174,7 @@ legend {
 .item-card-image {
     background-size: cover; 
     min-height: 260px;
-    border-bottom: 6px solid rgb(9, 130, 236);
+    border-bottom: 6px solid #c675de;
 }
 
 .item-card-description {
@@ -157,7 +190,7 @@ legend {
 .item-card-title {
     font-size: 16px;
     font-weight: bold;
-    color: rgb(9, 130, 236);
+    color: #c675de;
 }
 
 .item-card-action-button {
@@ -174,10 +207,8 @@ legend {
 }
 
 .info-section-header {
-    margin-bottom: 10px;
-    font-weight: bold;
-    font-size: 2em;
-    color: rgb(102,102,102);
+    color: #c675de;
+    text-align: center;
 }
 
 p {
@@ -251,12 +282,12 @@ fieldset {
 .info-section-description-title {
     font-weight: bold;
     font-size: 20px;
-    color: rgb(9, 130, 236);
+    color: #c675de;
 }
 
 .info-section-description-subtitle {
     font-style: italic;
-    color: rgb(9, 130, 236);
+    color: #c675de;
 }
 
 .full-width-img{
@@ -270,7 +301,7 @@ fieldset {
 
 @media (max-width: 768px) {
     .second-level-menu-item {
-        color: rgb(9, 130, 236);
+        color: #c675de;
         padding: 0 4px;
     }
 
@@ -280,6 +311,7 @@ fieldset {
     
     .hero-banner-header {
         font-size: 28px;
+        margin-top: 80px;
     }
 
     .container {
@@ -297,7 +329,7 @@ fieldset {
         font-size: 24px;
         text-align: center;
         background-color: rgba(238, 80, 80, 0.9);
-        border-color: rgb(9, 130, 236);
+        border-color: #c675de;
         padding: 12px 0;
     }
 
@@ -331,10 +363,6 @@ fieldset {
         margin-bottom: 0;
         margin-top: 10px;
         font-size: 18px;
-    }
-
-    .info-section-header {
-        text-align: center;
     }
 
     .item-card-description-body {

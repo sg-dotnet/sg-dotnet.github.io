@@ -1,0 +1,41 @@
+.ui-showmore-initial {
+    max-height: 200px;
+    overflow-y: hidden;
+}
+.ui-showmore-wrapper {
+    overflow-y: hidden;
+    display: inline-block;
+    position: relative;
+}
+/* Gradient example for show more control */
+.ui-showmore-more {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 70%, rgba(255,255,255,1) 100%);
+}
+.ui-showmore-more > span {
+    cursor: pointer;
+    vertical-align: bottom;
+    line-height: initial;
+}
+.ui-showmore-more > span > span {
+    display: inline-block;
+    vertical-align: middle;
+}
+.ui-showmore-less {
+    width:100%;
+    position:absolute;
+    left:0;
+    bottom:0px;
+    text-align: center;
+}
+.ui-showmore-less > span {
+    cursor: pointer;
+}
+.ui-showmore-less > span > span {
+    display: inline-block;
+    vertical-align: middle;
+}

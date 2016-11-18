@@ -9,14 +9,18 @@
     <environment names="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css" />
+
         <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/css/show-more.css" />
     </environment>
     <environment names="Staging,Production">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css" asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
             asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
-            asp-fallback-href="~/lib/font-awesome/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" asp-fallback-href="~/lib/font-awesome/css/font-awesome.min.css"
+            asp-fallback-test-class="fa" asp-fallback-test-property="display" asp-fallback-test-value="inline-block" />
+
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/show-more.min.css" asp-append-version="true" />
     </environment>
 </head>
 
@@ -37,7 +41,7 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#about">About Us</a></li>
-                        <li><a href="#join-us">Tech Meetups</a></li>
+                        <li><a href="#meetups">Tech Meetups</a></li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
@@ -52,13 +56,33 @@
         @RenderBody()
     </div>
 
+    <div id="popup-img-modal" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Gallery Image</h4>
+                </div>
+                <div class="modal-body">
+                    <figure>
+                        <img src="" id="popup-img" style="width: 100%;" />
+                        <figcaption id="popup-img-title"></figcaption>
+                    </figure>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-sm-6">
+                <div class="col-lg-6 col-sm-4">
 
                 </div>
-                <div class="col-lg-2 col-sm-3">
+                <div class="col-lg-3 col-sm-4">
                     <div class="row">
                         <div class="col-xs-12">
 
@@ -68,7 +92,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2 col-sm-3">
+                <div class="col-lg-3 col-sm-4">
                     <div class="row">
                         <div class="col-xs-12">
                             <a href="https://www.facebook.com/groups/sg.netdev/" target="_blank"><i class="fa fa-facebook-official"></i> Community FB Group</a>
@@ -88,18 +112,33 @@
 
     <environment names="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/jquery-ui/jquery-ui.min.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+        
+
         <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/js/popup-image.js" asp-append-version="true"></script>
+        <script src="~/js/show-more.js" asp-append-version="true"></script>
     </environment>
     <environment names="Staging,Production">
         <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.3.min.js" asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
             asp-fallback-test="window.jQuery">
         </script>
+        <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js" asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+            asp-fallback-test="jQuery.ui"></script>
         <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js" asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
             asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
         </script>
+        
         <script src="~/js/site.min.js" asp-append-version="true"></script>
+        <script src="~/js/popup-image.min.js" asp-append-version="true"></script>
+        <script src="~/js/show-more.min.js" asp-append-version="true"></script>
     </environment>
+
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyASOH8DUiLOI6lGdbhzKg0Cd1c0vjAIAZA">
+    </script>
 
     @RenderSection("scripts", required: false)
 </body>
