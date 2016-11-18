@@ -4,9 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Net.Http;
 using Microsoft.AspNetCore.Mvc;
-using CommunityWeb.Models;
-using Newtonsoft.Json;
-using Microsoft.Extensions.Options;
 
 namespace CommunityWeb.Controllers
 {
