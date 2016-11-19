@@ -29,8 +29,16 @@ legend {
     padding: 4px 14px !important;
 }
 
+.small-text{
+    font-size: 10px;
+}
+
 .horizontal-space-30px {
     padding-right: 30px;
+}
+
+.vertical-space-30px {
+    margin-top: 30px;
 }
 
 .hero-banner {
@@ -209,6 +217,7 @@ a.more-btn-home, .more-btn-home {
 .info-section-header {
     color: #c675de;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 p {
@@ -297,6 +306,11 @@ fieldset {
 
 #join-us{
     padding-top: 100px;
+}
+
+.media-object{
+    width: 192px;
+    height: 192px;
 }
 
 @media (max-width: 768px) {

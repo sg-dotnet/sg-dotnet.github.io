@@ -1,7 +1,7 @@
 // Write your Javascript code.
 $(function() {
-    $(".nav a").on("click", function(){
-        $(".nav").find(".active").removeClass("active");
+    $(".navbar-nav a").on("click", function(){
+        $(".navbar-nav").find(".active").removeClass("active");
         $(this).parent().addClass("active");
 
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {

@@ -1,9 +1,12 @@
 @using CommunityWeb.Models;
+@using CommunityWeb.Constants;
 
 @{ ViewData["Title"] = "Home Page"; }
 
 @{
     var meetupEvents = (IEnumerable<MeetupEvent>)ViewBag.MeetupEvents;
+
+    var materials = (IEnumerable<Material>)ViewBag.Materials;
 }
 
 <div>
@@ -120,6 +123,62 @@
                         </div>
                     </div>
                 }
+            </div>
+        </div>
+    </div>
+
+    <div id="learning-materials" class="info-section info-section-light-blue">
+        <div class="container">
+            <div class="info-section-header">
+                <h2>Learning Materials</h2>
+            </div>
+            <div class="info-section-description">
+                @foreach(var individualMaterial in materials) 
+                {
+                    string authorNamesWithLink = string.Join(", ", individualMaterial.Authors
+                        .Select(x => "<a href='" + x.ProfileUrl + "' target='_blank'>" + x.Name + "</a>"));
+
+                    <div class="media">
+                        <div class="media-left hidden-xs">
+                            <a href="javascript:;">
+                                <img class="media-object" src="@individualMaterial.ThumbnailImageUrl" alt="@individualMaterial.Name">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">@individualMaterial.Name</h4>
+                            <p class="help-block small-text">by @Html.Raw(authorNamesWithLink)</p>
+
+                            @individualMaterial.Summary
+
+                            <div class="vertical-space-30px">
+                                <div class="btn-group" role="group" aria-label="Resources">
+                                    @foreach(var link in individualMaterial.Links)
+                                    {
+                                        <a class="btn btn-default" href="@link.Url" role="button" target="_blank"><i class="fa @MaterialType.MaterialTypeDic[link.Type]"></i> @link.Type</a>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <!--<div class="row">
+                    <div class="col-md-3">
+                        <ul class="nav nav-pills nav-stacked" id="myTabs">
+                            <li class="active"><a href="#home" data-toggle="pill">Home</a></li>
+                            <li><a href="#profile" data-toggle="pill">Profile</a></li>
+                            <li><a href="#messages" data-toggle="pill">Messages</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-9">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="home">Home</div>
+                            <div class="tab-pane" id="profile">Profile</div>
+                            <div class="tab-pane" id="messages">Messages</div>
+                        </div>
+                    </div>
+                </div>-->
             </div>
         </div>
     </div>
