@@ -60,7 +60,7 @@
         "Name": "Powershell Invoke-RestMethod",
         "Summary": "Learn the installation and setup of Powershell-Core on Linux machine and how to control IoT devices with Invoke-RestMethod from PowerShell-Core.",
         "UploadedAt": "2016-11-09",
-        "ThumbnailImageUrl": "https://sgdotnet.blob.core.windows.net/materials/material-invoke-restmethod.jpg",
+        "ThumbnailImageUrl": "https://sgdotnet.blob.core.windows.net/materials/material-invoke-restmethod.png",
         "Authors": [
             {
                 "Name": "Paul Amazona",
@@ -84,7 +84,7 @@
         "Name": "Let’s Learn How To Use JavaScript Responsibly And Stay Up-To-Date",
         "Summary": "Chris is a Senior Program Manager at Microsoft, working on Microsoft Edge. In this talk, he shares tips on how to use JS responsibly and most importantly stay up-to-date!",
         "UploadedAt": "2015-11-19",
-        "ThumbnailImageUrl": "https://sgdotnet.blob.core.windows.net/materials/material-christian-heilmann.jpg",
+        "ThumbnailImageUrl": "https://sgdotnet.blob.core.windows.net/materials/material-christian-heilmann.png",
         "Authors": [
             {
                 "Name": "Christian Heilmann",
@@ -108,7 +108,7 @@
         "Name": "State of Hybrid App Development",
         "Summary": "Ryan is a Principal Program Manager at Microsoft, working in the Visual Studio Client Tools team where he looks after HTML, CSS and JavaScript development. ",
         "UploadedAt": "2015-11-19",
-        "ThumbnailImageUrl": "https://sgdotnet.blob.core.windows.net/materials/material-ryan.jpg",
+        "ThumbnailImageUrl": "https://sgdotnet.blob.core.windows.net/materials/material-ryan.png",
         "Authors": [
             {
                 "Name": "Ryan J. Salva",
