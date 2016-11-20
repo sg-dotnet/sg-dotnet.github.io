@@ -106,7 +106,7 @@
     },
     {
         "Name": "State of Hybrid App Development",
-        "Summary": "Ryan is a Principal Program Manager at Microsoft, working in the Visual Studio Client Tools team where he looks after HTML, CSS and JavaScript development. ",
+        "Summary": "Ryan is a Principal Program Manager at Microsoft, working in the Visual Studio Client Tools team where he looks after HTML, CSS and JavaScript development.",
         "UploadedAt": "2015-11-19",
         "ThumbnailImageUrl": "https://sgdotnet.blob.core.windows.net/materials/material-ryan.png",
         "Authors": [
@@ -125,6 +125,25 @@
                 "Name": "State of Hybrid App Development",
                 "Url": "https://sgdotnet.blob.core.windows.net/materials/StateOfHybridApps.pptx",
                 "Type": "PPT Slides"
+            }
+        ]
+    },
+    {
+        "Name": "Tooling using Bower, NPM, Gulp for ASP.NET Core 1.0",
+        "Summary": "ASP.NET 5 is dead. It's renamed as ASP.NET Core 1.0 now. Lots of differences when developing web for ASP.NET 4 and ASP.NET Core 1.0. Especially the tooling. See how to develop ASP.NET Core 1.0 using the open source tooling inside Visual Studio or just using command line console.",
+        "UploadedAt": "2016-02-25",
+        "ThumbnailImageUrl": "https://sgdotnet.blob.core.windows.net/materials/material-tooling.png",
+        "Authors": [
+            {
+                "Name": "Riza Marhaban",
+                "ProfileUrl": "https://github.com/rizamarhaban"
+            }
+        ],
+        "Links": [
+            {
+                "Name": "Tooling using Bower, NPM, Gulp for ASP.NET Core 1.0",
+                "Url": "https://www.youtube.com/watch?v=Slp8zcQBcaU",
+                "Type": "YouTube Video"
             }
         ]
     }
