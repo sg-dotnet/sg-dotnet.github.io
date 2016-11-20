@@ -1,11 +1,8 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Net.Http;
 using Microsoft.AspNetCore.Mvc;
 using CommunityWeb.Models;
-using Newtonsoft.Json;
 using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
@@ -46,20 +43,6 @@ namespace CommunityWeb.Controllers
                 "https://sgdotnet.blob.core.windows.net/materials/materials.json"));
 
             ViewBag.Materials = materials.OrderByDescending(m => m.UploadedAt);
-
-            return View();
-        }
-
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
 
             return View();
         }
