@@ -154,7 +154,7 @@
                                 <div class="btn-group" role="group" aria-label="Resources">
                                     @foreach(var link in individualMaterial.Links)
                                     {
-                                        <a class="btn btn-default" href="@link.Url" role="button" target="_blank"><i class="fa @MaterialType.MaterialTypeDic[link.Type]"></i> @link.Type</a>
+                                        <a class="btn btn-default" href="@link.Url" role="button" target="_blank"><i class="fa @MaterialType.MaterialTypeDic[link.Type]"></i> <span class="hidden-xs">@link.Type</span></a>
                                     }
                                 </div>
                             </div>
