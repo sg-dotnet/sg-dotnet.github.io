@@ -22,8 +22,8 @@ legend {
 
 .btn-theme {
     color: #ffffff;
-    background-color: #c675de;
-    border-color: #c675de;
+    background-color: #682a7b;
+    border-color: #682a7b;
     font-size: 14px;
     font-weight: bold;
     padding: 4px 14px !important;
@@ -42,7 +42,7 @@ legend {
 }
 
 .hero-banner {
-    border-top: 4px solid #c675de;
+    border-top: 4px solid #682a7b;
     background-image: url('../images/meetup-banner-2.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -88,8 +88,8 @@ legend {
 
 .btn-theme-submit {
     color: #ffffff;
-    background-color: #c675de;
-    border-color: #c675de;
+    background-color: #682a7b;
+    border-color: #682a7b;
     font-size: 24px;
     font-weight: bold;
     padding: 4px 14px !important;
@@ -182,7 +182,7 @@ a.more-btn-home, .more-btn-home {
 .item-card-image {
     background-size: cover; 
     min-height: 260px;
-    border-bottom: 6px solid #c675de;
+    border-bottom: 6px solid #682a7b;
 }
 
 .item-card-description {
@@ -198,7 +198,7 @@ a.more-btn-home, .more-btn-home {
 .item-card-title {
     font-size: 16px;
     font-weight: bold;
-    color: #c675de;
+    color: #682a7b;
 }
 
 .item-card-action-button {
@@ -215,7 +215,7 @@ a.more-btn-home, .more-btn-home {
 }
 
 .info-section-header {
-    color: #c675de;
+    color: #682a7b;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -291,12 +291,12 @@ fieldset {
 .info-section-description-title {
     font-weight: bold;
     font-size: 20px;
-    color: #c675de;
+    color: #682a7b;
 }
 
 .info-section-description-subtitle {
     font-style: italic;
-    color: #c675de;
+    color: #682a7b;
 }
 
 .full-width-img{
@@ -315,7 +315,7 @@ fieldset {
 
 @media (max-width: 768px) {
     .second-level-menu-item {
-        color: #c675de;
+        color: #682a7b;
         padding: 0 4px;
     }
 
@@ -343,7 +343,7 @@ fieldset {
         font-size: 24px;
         text-align: center;
         background-color: rgba(238, 80, 80, 0.9);
-        border-color: #c675de;
+        border-color: #682a7b;
         padding: 12px 0;
     }
 

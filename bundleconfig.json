@@ -10,29 +10,10 @@
   {
     "outputFileName": "wwwroot/js/site.min.js",
     "inputFiles": [
-      "wwwroot/js/site.js"
-    ],
-    "minify": {
-      "enabled": true,
-      "renameLocals": true
-    },
-    "sourceMap": false
-  },
-  {
-    "outputFileName": "wwwroot/js/popup-image.min.js",
-    "inputFiles": [
-      "wwwroot/js/popup-image.js"
-    ],
-    "minify": {
-      "enabled": true,
-      "renameLocals": true
-    },
-    "sourceMap": false
-  },
-  {
-    "outputFileName": "wwwroot/js/show-more.min.js",
-    "inputFiles": [
-      "wwwroot/js/show-more.js"
+      "wwwroot/js/site.js",
+      "wwwroot/js/popup-image.js",
+      "wwwroot/js/show-more.js",
+      "wwwroot/js/header-scroll.js"
     ],
     "minify": {
       "enabled": true,
