@@ -152,24 +152,6 @@ legend {
     margin-top: 10px;
 }
 
-.extender{
-    text-align: center; 
-    border-bottom: 1px solid #dedede;
-    margin-bottom: 30px;
-}
-
-a.more-btn-home, .more-btn-home {
-    background-color: #333;
-    cursor: pointer;
-    border: 1px solid #000;
-    font-size: 12px;
-    font-weight: bold;
-    color: #fff;
-    border-radius: 5px 5px 0 0;
-    display: inline-block;
-    padding: 5px 8px;
-}
-
 .item-card {
     border: 1px solid #dddddd;
     margin-top: 10px;
