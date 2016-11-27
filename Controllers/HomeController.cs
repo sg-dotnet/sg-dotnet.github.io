@@ -40,7 +40,7 @@ namespace CommunityWeb.Controllers
             ViewBag.MeetupEvents = meetupEvents;
 
             var materials = (await JsonParser<Material>.RetrieveJsonDataFromUrlAsync(
-                "https://sgdotnet.blob.core.windows.net/materials/materials.json"));
+                "https://sg-dotnet.firebaseio.com/materials.json"));
 
             ViewBag.Materials = materials.OrderByDescending(m => m.UploadedAt);
 
