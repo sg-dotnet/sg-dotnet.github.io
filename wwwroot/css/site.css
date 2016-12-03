@@ -330,10 +330,11 @@ h1.underlined-heading:after, h2.underlined-heading:after, h3.underlined-heading:
 
 .sponsor-logo{
     height: 90px;
+    margin-right: 6px;
 }
 
-.sponsor-logo + .sponsor-logo{
-    margin-right: 6px;
+.sponsor-logo-last{
+    height: 90px;
 }
 
 @media (max-width: 768px) {
