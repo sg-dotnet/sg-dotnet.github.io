@@ -324,6 +324,15 @@ h1.underlined-heading:after, h2.underlined-heading:after, h3.underlined-heading:
     margin-bottom: 60px;
 }
 
+.sponsor-logos{
+    text-align: center;
+    margin-right: 6px;
+}
+
+.sponsor-logo{
+    height: 90px;
+}
+
 @media (max-width: 768px) {
     .second-level-menu-item {
         color: #682a7b;
