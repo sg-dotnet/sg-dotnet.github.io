@@ -310,6 +310,16 @@ h1.underlined-heading, h2.underlined-heading, h3.underlined-heading, h4.underlin
     color: #682a7b;
 }
 
+h1.underlined-heading:after, h2.underlined-heading:after, h3.underlined-heading:after, h4.underlined-heading:after, h5.underlined-heading:after, h6.underlined-heading:after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: #4ac2e2;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+
 .margin-bottom-60 {
     margin-bottom: 60px;
 }
