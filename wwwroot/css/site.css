@@ -33,6 +33,10 @@ legend {
     font-size: 10px;
 }
 
+.uppercase{
+    text-transform: uppercase;
+}
+
 .horizontal-space-30px {
     padding-right: 30px;
 }
@@ -299,6 +303,15 @@ fieldset {
     margin-top: 8px;
     font-weight: bold;
     margin-left: 15px;
+}
+
+h1.underlined-heading, h2.underlined-heading, h3.underlined-heading, h4.underlined-heading, h5.underlined-heading, h6.underlined-heading {
+    text-align: center;
+    color: #682a7b;
+}
+
+.margin-bottom-60 {
+    margin-bottom: 60px;
 }
 
 @media (max-width: 768px) {
