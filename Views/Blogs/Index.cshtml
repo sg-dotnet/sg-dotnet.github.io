@@ -7,6 +7,8 @@
 @{
     const string CATEGORY_DOTNET_CORE = ".NET Core";
     const string CATEGORY_ENTITY_FRAMEWORK = "Entity Framework";
+    const string CATEGORY_COGNITIVE_SERVICES = "Cognitive Services";
+    const string CATEGORY_ORLEANS = "Orleankka";
 }
 
 <div>
@@ -50,6 +52,44 @@
             </div>
             <div class="info-section-description">
                 @foreach(var item in Model.Where(x => x.Categories.Contains(CATEGORY_ENTITY_FRAMEWORK))) 
+                {
+                    <div class="bs-callout bs-callout-info bs-callout-gray">
+                        <h4><a href="@item.Link" target="_blank">@item.Title</a></h4>
+                        <p>
+                            @Html.Raw(item.Description)
+                        </p>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div id="articles-cognitive-services" class="info-section info-section-light-blue">
+        <div class="container">
+            <div class="info-section-header">
+                <h2 class="underlined-heading margin-bottom-60 uppercase">Bots and Cognitive Services</h2>
+            </div>
+            <div class="info-section-description">
+                @foreach(var item in Model.Where(x => x.Categories.Contains(CATEGORY_COGNITIVE_SERVICES))) 
+                {
+                    <div class="bs-callout bs-callout-info">
+                        <h4><a href="@item.Link" target="_blank">@item.Title</a></h4>
+                        <p>
+                            @Html.Raw(item.Description)
+                        </p>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div id="articles-orleans" class="info-section">
+        <div class="container">
+            <div class="info-section-header">
+                <h2 class="underlined-heading margin-bottom-60 uppercase">Orleans</h2>
+            </div>
+            <div class="info-section-description">
+                @foreach(var item in Model.Where(x => x.Categories.Contains(CATEGORY_ORLEANS))) 
                 {
                     <div class="bs-callout bs-callout-info bs-callout-gray">
                         <h4><a href="@item.Link" target="_blank">@item.Title</a></h4>
