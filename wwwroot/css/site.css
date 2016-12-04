@@ -47,10 +47,6 @@ legend {
 
 .hero-banner {
     border-top: 4px solid #682a7b;
-    background-image: url('../images/meetup-banner-2.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 0 30%; 
     height: 420px;
 }
 
@@ -70,6 +66,20 @@ legend {
     font-weight: bold;
     text-align: center;
     text-shadow: 1px 1px #000000
+}
+
+.hero-banner-home {
+    background-image: url('../images/meetup-banner-2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 30%; 
+}
+
+.hero-banner-blogs {
+    background-image: url('../images/hero-banner-blogs.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 30%; 
 }
 
 .date_field[readonly].form-control {

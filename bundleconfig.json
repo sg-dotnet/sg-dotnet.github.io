@@ -4,7 +4,8 @@
     "inputFiles": [
       "wwwroot/css/site.css",
       "wwwroot/css/show-more.css",
-      "wwwroot/css/popup-image.css"
+      "wwwroot/css/popup-image.css",
+      "wwwroot/css/callouts.css"
     ]
   },
   {
