@@ -7,6 +7,8 @@ namespace CommunityWeb.Models
         public string Name { get; set; }
 
         public string FeedsUrl { get; set; }
+
+        public string[] DefaultCategories { get; set; }
     }
     
 }

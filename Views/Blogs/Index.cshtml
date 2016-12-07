@@ -36,6 +36,7 @@
                     <h2 class="underlined-heading margin-bottom-60 uppercase">@currentCategory.Name</h2>
                 </div>
                 <div class="info-section-description">
+                    @{ int articleCount = 0; }
                     @foreach(var item in Model.Where(x => currentCategory.Categories.Any(c => x.Categories.Contains(c)))) 
                     {
                         <div class="bs-callout bs-callout-info @calloutClass">
@@ -44,6 +45,11 @@
                                 @Html.Raw(item.Description)
                             </p>
                         </div>
+
+                        if (++articleCount == 5)
+                        {
+                            break;
+                        }
                     }
                 </div>
             </div>

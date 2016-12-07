@@ -2,9 +2,6 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Xml.Linq;
 using CommunityWeb.Util;
 using CommunityWeb.Models;
 
@@ -21,7 +18,23 @@ namespace CommunityWeb.Controllers
             
             foreach(var source in blogFeedsSources)
             {
-                articles = articles.Concat(await MsdnFeedReader.ParseFeedAsync(source.FeedsUrl));
+                var articlesInFeeds = await MsdnFeedReader.ParseFeedAsync(source.FeedsUrl);
+
+                if (source.DefaultCategories != null)
+                {
+                    foreach(var article in articlesInFeeds)
+                    {
+                        foreach(string defaultCategory in source.DefaultCategories)
+                        {
+                            if (!article.Categories.Contains(defaultCategory))
+                            {
+                                article.Categories.Add(defaultCategory);
+                            }
+                        }
+                    }
+                }
+
+                articles = articles.Concat(articlesInFeeds);
             }
 
             ViewBag.BlogCategories = (await JsonParser<Blog>.RetrieveJsonDataFromUrlAsync(
