@@ -91,7 +91,7 @@
                 <h2 class="underlined-heading margin-bottom-60 uppercase">Prism and WPF</h2>
             </div>
             <div class="info-section-description">
-                @foreach(var item in Model.Where(x => x.Categories.Contains(CATEGORY_PRISM) || x.Categories.Contains(CATEGORY_WPF)) 
+                @foreach(var item in Model.Where(x => x.Categories.Contains(CATEGORY_PRISM) || x.Categories.Contains(CATEGORY_WPF))) 
                 {
                     <div class="bs-callout bs-callout-info bs-callout-gray">
                         <h4><a href="@item.Link" target="_blank">@item.Title</a></h4>
