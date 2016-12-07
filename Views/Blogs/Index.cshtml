@@ -5,12 +5,7 @@
 @{ ViewData["Title"] = "Blogs"; }
 
 @{
-    const string CATEGORY_DOTNET_CORE = ".NET Core";
-    const string CATEGORY_ENTITY_FRAMEWORK = "Entity Framework";
-    const string CATEGORY_COGNITIVE_SERVICES = "Cognitive Services";
-    const string CATEGORY_PRISM = "Prism";
-    const string CATEGORY_WPF = "WPF";
-    const string CATEGORY_ORLEANS = "Orleankka";
+    var blogCategories = (IEnumerable<Blog>)ViewBag.BlogCategories;
 }
 
 <div>
@@ -28,100 +23,32 @@
         </div>
     </div>
 
-    <div id="articles-dotnet-core" class="info-section info-section-light-blue">
-        <div class="container">
-            <div class="info-section-header">
-                <h2 class="underlined-heading margin-bottom-60 uppercase">.NET Core</h2>
-            </div>
-            <div class="info-section-description">
-                @foreach(var item in Model.Where(x => x.Categories.Contains(CATEGORY_DOTNET_CORE))) 
-                {
-                    <div class="bs-callout bs-callout-info">
-                        <h4><a href="@item.Link" target="_blank">@item.Title</a></h4>
-                        <p>
-                            @Html.Raw(item.Description)
-                        </p>
-                    </div>
-                }
-            </div>
-        </div>
-    </div>
+    @for(int i = 0; i < blogCategories.Count(); i++)
+    {
+        var currentCategory = blogCategories.ElementAt(i);
 
-    <div id="articles-entity-framework" class="info-section">
-        <div class="container">
-            <div class="info-section-header">
-                <h2 class="underlined-heading margin-bottom-60 uppercase">Entity Framework</h2>
-            </div>
-            <div class="info-section-description">
-                @foreach(var item in Model.Where(x => x.Categories.Contains(CATEGORY_ENTITY_FRAMEWORK))) 
-                {
-                    <div class="bs-callout bs-callout-info bs-callout-gray">
-                        <h4><a href="@item.Link" target="_blank">@item.Title</a></h4>
-                        <p>
-                            @Html.Raw(item.Description)
-                        </p>
-                    </div>
-                }
-            </div>
-        </div>
-    </div>
+        string sectionClass = (i % 2 == 0) ? "info-section-light-blue" : "";
+        string calloutClass = (i % 2 == 0) ? "" : "bs-callout-gray";
 
-    <div id="articles-cognitive-services" class="info-section info-section-light-blue">
-        <div class="container">
-            <div class="info-section-header">
-                <h2 class="underlined-heading margin-bottom-60 uppercase">Bots and Cognitive Services</h2>
-            </div>
-            <div class="info-section-description">
-                @foreach(var item in Model.Where(x => x.Categories.Contains(CATEGORY_COGNITIVE_SERVICES))) 
-                {
-                    <div class="bs-callout bs-callout-info">
-                        <h4><a href="@item.Link" target="_blank">@item.Title</a></h4>
-                        <p>
-                            @Html.Raw(item.Description)
-                        </p>
-                    </div>
-                }
-            </div>
-        </div>
-    </div>
-
-    <div id="articles-orleans" class="info-section">
-        <div class="container">
-            <div class="info-section-header">
-                <h2 class="underlined-heading margin-bottom-60 uppercase">Prism and WPF</h2>
-            </div>
-            <div class="info-section-description">
-                @foreach(var item in Model.Where(x => x.Categories.Contains(CATEGORY_PRISM) || x.Categories.Contains(CATEGORY_WPF))) 
-                {
-                    <div class="bs-callout bs-callout-info bs-callout-gray">
-                        <h4><a href="@item.Link" target="_blank">@item.Title</a></h4>
-                        <p>
-                            @Html.Raw(item.Description)
-                        </p>
-                    </div>
-                }
+        <div id="articles-@currentCategory.Id" class="info-section @sectionClass">
+            <div class="container">
+                <div class="info-section-header">
+                    <h2 class="underlined-heading margin-bottom-60 uppercase">@currentCategory.Name</h2>
+                </div>
+                <div class="info-section-description">
+                    @foreach(var item in Model.Where(x => currentCategory.Categories.Any(c => x.Categories.Contains(c)))) 
+                    {
+                        <div class="bs-callout bs-callout-info @calloutClass">
+                            <h4><a href="@item.Link" target="_blank">@item.Title</a></h4>
+                            <p>
+                                @Html.Raw(item.Description)
+                            </p>
+                        </div>
+                    }
+                </div>
             </div>
         </div>
-    </div>
-
-    <div id="articles-orleans" class="info-section info-section-light-blue">
-        <div class="container">
-            <div class="info-section-header">
-                <h2 class="underlined-heading margin-bottom-60 uppercase">Orleans</h2>
-            </div>
-            <div class="info-section-description">
-                @foreach(var item in Model.Where(x => x.Categories.Contains(CATEGORY_ORLEANS))) 
-                {
-                    <div class="bs-callout bs-callout-info">
-                        <h4><a href="@item.Link" target="_blank">@item.Title</a></h4>
-                        <p>
-                            @Html.Raw(item.Description)
-                        </p>
-                    </div>
-                }
-            </div>
-        </div>
-    </div>
+    }
 </div>
 
 @section scripts {

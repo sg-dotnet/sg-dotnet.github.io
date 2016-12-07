@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Xml.Linq;
 using CommunityWeb.Util;
+using CommunityWeb.Models;
 
 namespace CommunityWeb.Controllers
 {
@@ -14,14 +15,17 @@ namespace CommunityWeb.Controllers
         public async Task<IActionResult> Index()
         {
             var articles = Enumerable.Empty<MsdnBlogFeedItem>();
+
+            var blogFeedsSources = (await JsonParser<BlogFeedsSource>.RetrieveJsonDataFromUrlAsync(
+                "https://sg-dotnet.firebaseio.com/blogfeedssources.json"));
             
-            articles = articles.Concat(await MsdnFeedReader.ParseFeedAsync("https://blogs.msdn.microsoft.com/dotnet/feed"));
+            foreach(var source in blogFeedsSources)
+            {
+                articles = articles.Concat(await MsdnFeedReader.ParseFeedAsync(source.FeedsUrl));
+            }
 
-            articles = articles.Concat(await MsdnFeedReader.ParseFeedAsync("https://blogs.msdn.microsoft.com/martinkearn/feed"));
-
-            articles = articles.Concat(await MsdnFeedReader.ParseFeedAsync("https://blogs.msdn.microsoft.com/orleans/feed"));
-
-            articles = articles.Concat(await MsdnFeedReader.ParseFeedAsync("https://blogs.msdn.microsoft.com/blaine/feed"));
+            ViewBag.BlogCategories = (await JsonParser<Blog>.RetrieveJsonDataFromUrlAsync(
+                "https://sg-dotnet.firebaseio.com/blogs.json"));
             
             return View(articles.ToList());
         }
