@@ -20,6 +20,8 @@ namespace CommunityWeb.Controllers
             articles = articles.Concat(await MsdnFeedReader.ParseFeedAsync("https://blogs.msdn.microsoft.com/martinkearn/feed"));
 
             articles = articles.Concat(await MsdnFeedReader.ParseFeedAsync("https://blogs.msdn.microsoft.com/orleans/feed"));
+
+            articles = articles.Concat(await MsdnFeedReader.ParseFeedAsync("https://blogs.msdn.microsoft.com/blaine/feed"));
             
             return View(articles.ToList());
         }
