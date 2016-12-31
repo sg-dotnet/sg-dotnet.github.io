@@ -59,6 +59,12 @@ namespace CommunityWeb
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
+                    name: "Learning Materials",
+                    url: "learning-materials",
+                    defaults: new { controller = "LearningMaterials", action = "Index" }
+                );
+                
+                routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
