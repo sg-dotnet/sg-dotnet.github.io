@@ -14,7 +14,7 @@ namespace CommunityWeb.Controllers
             var materials = (await JsonParser<Material>.RetrieveJsonDataFromUrlAsync(
                 "https://sg-dotnet.firebaseio.com/materials.json"));
             
-            return View(materials.OrderByDescending(m => m.UploadedAt));
+            return View(materials.OrderByDescending(m => m.UploadedAt).ToList());
         }
     }
 }
