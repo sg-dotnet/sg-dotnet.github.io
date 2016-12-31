@@ -60,7 +60,7 @@ namespace CommunityWeb
             {
                 routes.MapRoute(
                     name: "Learning Materials",
-                    url: "learning-materials",
+                    template: "learning-materials",
                     defaults: new { controller = "LearningMaterials", action = "Index" }
                 );
                 
