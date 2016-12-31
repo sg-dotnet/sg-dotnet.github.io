@@ -14,7 +14,7 @@
     left: 0;
     bottom: 0;
     text-align: center;
-    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 60%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(246, 249, 252,1) 60%, rgba(246, 249, 252,1) 100%);
 }
 .ui-showmore-more > span {
     cursor: pointer;
@@ -44,6 +44,7 @@
     text-align: center; 
     border-bottom: 1px solid #dedede;
     margin-bottom: 28px;
+    padding-top: 10px;
 }
 
 a.more-btn-home, .more-btn-home {

@@ -839,21 +839,6 @@ main header {
         position: relative;
     }
 
-    #meetups p {
-        margin: 30px auto;
-        padding: 0 20px;
-    }
-
-@media (min-width:670px) {
-    #meetups p {
-        max-width: 730px;
-        margin-bottom: 50px;
-        text-align: center;
-    }
-}
-
-
-
 @media (min-width:670px) {
     #notebook {
         position: relative;
@@ -919,6 +904,10 @@ main header {
 
 #secondary .common-paragraph {
     margin: 15px 0 18px;
+}
+
+#sponsors{
+    margin: 60px 0;
 }
 
 .sponsor-logos{
