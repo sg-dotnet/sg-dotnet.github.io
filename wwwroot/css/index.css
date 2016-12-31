@@ -922,3 +922,9 @@ main header {
 .sponsor-logo-last{
     height: 90px;
 }
+
+.event-map{
+    height: 400px; 
+    width: 100%; 
+    margin-top: 10px;
+}
