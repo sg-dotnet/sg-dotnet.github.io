@@ -7,7 +7,7 @@ using CommunityWeb.Models;
 
 namespace CommunityWeb.Controllers
 {
-    public class BlogsController : Controller
+    public class LearningMaterialsController : Controller
     {
         public async Task<IActionResult> Index()
         {
