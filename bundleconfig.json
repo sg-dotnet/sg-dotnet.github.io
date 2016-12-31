@@ -9,6 +9,15 @@
     ]
   },
   {
+    "outputFileName": "wwwroot/css/index.min.css",
+    "inputFiles": [
+      "wwwroot/css/index.css",
+      "wwwroot/css/show-more.css",
+      "wwwroot/css/customized-fonts.css",
+      "wwwroot/css/header-background.css"
+    ]
+  },
+  {
     "outputFileName": "wwwroot/js/site.min.js",
     "inputFiles": [
       "wwwroot/js/site.js",

@@ -1,0 +1,110 @@
+#dotnet, #dotnet span {
+    position: absolute;
+}
+
+#dotnet {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transform: skewY(6deg);
+    margin-top: -90px;
+    transform-origin: 0;
+    background: linear-gradient(150deg,#e407ff 15%,#3c21c8 70%,#5392f8 94%);
+}
+
+    #dotnet span {
+        height: 40px;
+    }
+
+    #dotnet :nth-child(1) {
+        width: 50%;
+        left: 50%;
+        top: 40px;
+        background: #9e12e8;
+    }
+
+    #dotnet :nth-child(2) {
+        width: 14%;
+        right: 0;
+        bottom: 40px;
+        background: #4a65e5;
+    }
+
+    #dotnet :nth-child(3) {
+        width: 25%;
+        bottom: 0;
+        right: 0;
+        background: #e407ff;
+    }
+
+@media (min-width:670px) {
+    #dotnet {
+        margin-top: -180px;
+    }
+
+    #dotnet span {
+        height: 150px;
+    }
+
+    #dotnet :nth-child(1) {
+        top: 0;
+        background: #4750ff;
+    }
+
+    #dotnet :nth-child(2) {
+        width: 16.66667%;
+        top: 300px;
+        bottom: auto;
+        background: #0dcfff;
+    }
+
+    #dotnet :nth-child(3) {
+        width: 33.33333%;
+        right: auto;
+        background: #11bdff;
+    }
+}
+
+@media (min-width:880px) {
+    #dotnet {
+        margin-top: -250px;
+    }
+
+    #dotnet span {
+        height: 190px;
+    }
+
+    #dotnet :nth-child(1) {
+        width: 33.33333%;
+        left: -16.66666%;
+        background: #c232ff;
+    }
+
+    #dotnet :nth-child(2) {
+        width: 33.33333%;
+        top: 0;
+        left: 16.66666%;
+        right: auto;
+        background: #b42cff;
+    }
+
+    #dotnet :nth-child(3) {
+        width: 33.33333%;
+        left: 49.99999%;
+        bottom: auto;
+        background: #581dd1;
+    }
+
+    #dotnet :nth-child(4) {
+        width: 33.33333%;
+        top: 380px;
+        right: -16.66666%;
+        background: #4b69e6;
+    }
+
+    #dotnet :nth-child(5) {
+        width: 33.33333%;
+        bottom: 0;
+        background: #8815e1;
+    }
+}

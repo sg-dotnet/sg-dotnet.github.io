@@ -1,96 +1,213 @@
 @using CommunityWeb.Models;
 @using CommunityWeb.Constants;
 
-@{ ViewData["Title"] = "dotnet.sg"; }
-
-@{
-    var meetupEvents = (IEnumerable<MeetupEvent>)ViewBag.MeetupEvents;
-
-    var materials = (IEnumerable<Material>)ViewBag.Materials;
+@{ 
+    ViewData["Title"] = "dotnet.sg"; 
+    Layout = null;
 }
 
-<div>
-    <div class="hero-banner hero-banner-home">
-        <div class="row">
-            <div class="col-md-12">
-                <h1 class="hero-banner-header">
-                    Singapore .NET Developers Community
-                </h1>
-                <div class="hero-banner-title">
-                    Empowering Talents To Make Real Impact With .NET Technologies
-                </div>
-            </div>
 
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>dotnet.sg - Singapore .NET Developers Community</title>
+
+  <meta name="description" content="Hello! We are the .NET developers community in Singapore! Join us at our meetups to find out more about Microsoft .NET technology.">
+
+  <!-- for Facebook -->
+  <meta property="og:title" content="Singapore .NET Developers Community">
+  <meta property="og:description" content="Hello! We are the .NET developers community in Singapore! Join us at our meetups to find out more about Microsoft .NET technology.">
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://dotnet.sg/images/meetup-banner-3.jpg" />
+  <meta property="og:url" content="http://dotnet.sg/" />
+
+  <link rel="shortcut icon" href="wwwroot/images/favicon.png">
+
+  <link rel="apple-touch-icon-precomposed" href="wwwroot/images/apple-icon-180x180.png">
+  <link rel="icon" href="wwwroot/images/apple-icon-180x180.png">
+
+
+  <link rel="image_src" type="image/png" href="http://dotnet.sg/images/meetup-banner-3.jpg">
+
+  <environment names="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css" asp-append-version="true" />
+
+        <link rel="stylesheet" href="~/css/show-more.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/customized-fonts.css" asp-append-version="true"/>
+        <link rel="stylesheet" href="~/css/header-background.css" asp-append-version="true" />
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css" asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+            asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" asp-fallback-href="~/lib/font-awesome/css/font-awesome.min.css"
+            asp-fallback-test-class="fa" asp-fallback-test-property="display" asp-fallback-test-value="inline-block" />
+
+        <link rel="stylesheet" href="~/css/index.min.css" asp-append-version="true" />
+    </environment>
+
+  
+</head>
+
+<body>
+  <header class="globalNav noDropdownTransition">
+
+
+    <div class="container-lg">
+      <ul class="navRoot">
+
+
+        <li class="navSection logo">
+          <a class="rootLink item-home colorize" href="/">
+            <h1 id="brand">
+              .NET SG
+            </h1>
+          </a>
+        </li>
+
+        <li class="navSection primary">
+          <a class="rootLink colorize" href="#about-us">About Us</a>
+          <a class="rootLink colorize" href="#secondary">Meetups</a>
+          <a class="rootLink colorize" href="/learning-materials">Learning Materials</a>
+          <a class="rootLink colorize" href="/blogs">Articles</a>
+        </li>
+
+        <li class="navSection secondary">
+          <a class="rootLink item-proceed colorize" href="https://www.facebook.com/groups/sg.netdev">Join Us </a>
+        </li>
+      </ul>
     </div>
-
-    <div id="about" class="info-section info-section-light-blue">
+    <div class="visible-xs">
+      <nav class="navbar">
         <div class="container">
-            <div class="info-section-header">
-                <img src="/images/community-logo.png" alt="About Us" class="img-rounded" />
-                <h2 class="underlined-heading margin-bottom-60 uppercase">About Us</h2>
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                              <span class="sr-only">Toggle navigation</span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                          </button>
+            
+          </div>
+
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+            <ul id="header-main-menu" class="nav navbar-nav">
+              <li><a href="/#about">About Us</a></li>
+              <li><a href="/#meetups">Tech Meetups</a></li>
+              <li><a href="/learning-materials">Learning Materials</a></li>
+              <li id="hearder-main-menu-blogs"><a href="/blogs">.NET Articles</a></li>
+            </ul>
+
+            <div class="nav navbar-nav navbar-right">
+              <a href="https://www.facebook.com/groups/sg.netdev/" target="_blank" class="general-button general-button--default navbar-right-button"> Join Us!</a>
             </div>
-            <div class="info-section-description">
-                <p>
-                    In November 2014, Microsoft has announced that .NET are now Open Source. Even though the process is still going on, but we
-                    eventually sees that the .NET ecosystem are still strong and getting stronger. The new Open Source .NET
-                    will also merge some of other developers using other platform like Linux and Mac OS to learn and utilize
-                    .NET.
-                </p>
-
-                <p>
-                    In Singapore, this .NET ecosystem has not been as good as other countries. Does not mean there is no .NET developers or enterprises
-                    not using .NET. In fact most enterprises in Singapore using .NET for their development.
-                </p>
-
-                <p>
-                    So, we as the .NET developers community can do more, helping others who wants to learn .NET as well. Just imagine, all of
-                    your .NET codes can just be run in other platform as well. No matter what OS they use, .NET can be executed.
-                </p>
-
-                <p>
-                    We invite all of .NET developers based in Singapore to join this community and learn .NET starting from beginners to advanced.
-                    I was hoping we can share the knowledge on .NET or .NET related ecosystem such as using Microsoft Azure
-                    + .NET.
-                </p>
-
-                <p>
-                    Join us and you can also get the latest news and -- probably --what's new in .NET future, even before announce in the media.
-                </p>
-
-                <div class="row">
-                    <div class="col-lg-4 col-sm-6">
-                        <figure>
-                            <img class="full-width-img img-thumbnail popup-image" src="images/meetup-banner-1.jpg" alt="Free C# Training (Beginners) for Non .NET Developers."
-                            />
-                            <figcaption>Free C# Training (Beginners) for Non .NET Developers.</figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <figure>
-                            <img class="full-width-img img-thumbnail popup-image" src="images/meetup-banner-4.png" alt="Rita Zhang and Bhargav Nookala on Building Blocks on Building Bots."
-                            />
-                            <figcaption>Rita Zhang and Bhargav Nookala on Building Blocks on Building Bots.</figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <figure>
-                            <img class="full-width-img img-thumbnail popup-image" src="images/meetup-banner-3.jpg" alt=".NET experts always welcome audience to ask deep questions on C#/.NET in the meetup."
-                            />
-                            <figcaption>.NET experts always welcome audience to ask deep questions on C#/.NET in the meetup.</figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+      </nav>
     </div>
+  </header>
 
-    <div id="meetups" class="info-section">
-        <div class="container">
-            <div class="info-section-header">
-                <h2 class="underlined-heading margin-bottom-60 uppercase">Tech Meetups</h2>
+
+  <div class="globalContent">
+
+    <main>
+      <header>
+        <div id="dotnet">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <section id="intro">
+          <div class="container-lg">
+
+            <a class="announcement" href="http://www.hanselman.com/blog/FreeIntermediateASPNETCore10TrainingOnMicrosoftVirtualAcademy.aspx"
+              target="_blank">
+              <span class="new-pill">New</span>
+              <span class="message">
+                <strong>Free Training:</strong> Intermediate ASP .NET Core 1.0 Training on Microsoft Virtual Academy.
+              </span>
+            </a>
+
+            <h1>
+              Singapore .NET Developers Community
+            </h1>
+            <p class="common-paragraph">
+              We invite all of .NET developers based in Singapore to join this community and learn .NET starting from beginners to advanced.
+              Here, we share the knowledge on .NET or .NET-related ecosystem, eg. Microsoft Azure + .NET.
+            </p>
+            <ul>
+              <li>
+                <a href="https://www.facebook.com/groups/sg.netdev" class="general-button">
+                  Join Us Now
+                </a>
+              </li>
+              <li>
+                <a href="https://www.meetup.com/NET-Developers-SG" class="general-button">
+                  Attend Our Meetups
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </header>
+
+
+      <section id="photos" class="visible-lg visible-md">
+        <img alt="Rita Zhang and Bhargav Nookala on Building Blocks on Building Bots." src="wwwroot/images/meetup-banner-4.png" class="header-image" /><br />
+        <img alt="Free C# Training (Beginners) for Non .NET Developers." src="wwwroot/images/meetup-banner-1.jpg" class="header-image" /><br />
+        <img alt="Powershell Invoke-RestMethod vs IoT" src="wwwroot/images/meetup-banner-2.jpg" class="header-image" /><br />
+      </section>
+
+      <section id="primary">
+        <section id="about-us" class="container-lg">
+          <h2 class="section-title">
+            <span>
+              Building Singapore .NET Development Ecosystem
+            </span>
+          </h2>
+          <p class="common-paragraph">
+            In Singapore, the .NET ecosystem has not been as good as other countries. However, it does not mean there is no .NET developers or enterprises not using .NET. 
+            In fact, most of the enterprises in Singapore are using .NET for their development.
+          </p>
+          <p class="common-paragraph">
+            Hence, in this community, we would like to group .NET developers and those who wants to learn .NET together to contribute to the .NET ecosystem in Singapore.
+          </p>
+          <a class="common-paragraph general-link general-link--arrow" href="https://www.meetup.com/NET-Developers-SG">
+            Find out more about our meetups
+          </a>
+        </section>
+
+
+
+        <section id="mobile-photos" class="hidden-lg hidden-md container">
+          <div class="row">
+            <div class="col-sm-6">
+              <img alt="Rita Zhang and Bhargav Nookala on Building Blocks on Building Bots." src="wwwroot/images/meetup-banner-4.png" class="header-image" />
             </div>
-            <div class="info-section-description">
+            <div class="col-sm-6 hidden-xs">
+              <img alt="Free C# Training (Beginners) for Non .NET Developers." src="wwwroot/images/meetup-banner-1.jpg" class="header-image" />
+            </div>
+            <div class="hidden-sm hidden-xs">
+              <img alt="Powershell Invoke-RestMethod vs IoT" src="wwwroot/images/meetup-banner-2.jpg" class="header-image" />
+            </div>
+          </div>
+        </section>
+
+        <section id="meetups">
+          <h2 class="section-title">
+            Tech Meetups
+          </h2>
+          
+          <div class="container">
                 @foreach(var individualEvent in meetupEvents) 
                 {
                     <div class="row">
@@ -123,71 +240,40 @@
                         </div>
                     </div>
                 }
-            </div>
+          </div>
+          </section>
+      </section>
+
+      <section id="secondary" class="container hidden-xs">
+        <div class="row">
+          <div class="col-sm-6">
+            <h2 class="section-title">
+              Learning Materials
+            </h2>
+            <p class="common-paragraph">
+              List of materials shared during the meetup sessions. It also includes videos and articles about grand events related to .NET
+              development and other Microsoft technology.
+            </p>
+            <a class="common-paragraph general-link general-link--arrow" href="/learning-materials">
+              Learn more
+            </a>
+          </div>
+
+          <div class="col-sm-6">
+            <h2 class="section-title">
+              Articles
+            </h2>
+            <p class="common-paragraph">
+              Blog feeds from several interesting and popular Microsoft technology blogs. Here you can find the latest updates of .NET Core, WPF, Microsoft Azure, etc. Enjoy reading!
+            </p>
+            <a class="common-paragraph general-link general-link--arrow" href="/blogs">
+              Learn more
+            </a>
+          </div>
         </div>
-    </div>
 
-    <div id="learning-materials" class="info-section info-section-light-blue">
-        <div class="container">
-            <div class="info-section-header">
-                <h2 class="underlined-heading margin-bottom-60 uppercase">Learning Materials</h2>
-            </div>
-            <div class="info-section-description">
-                @foreach(var individualMaterial in materials) 
-                {
-                    string authorNamesWithLink = string.Join(", ", individualMaterial.Authors
-                        .Select(x => "<a href='" + x.ProfileUrl + "' target='_blank'>" + x.Name + "</a>"));
-
-                    <div class="media">
-                        <div class="media-left hidden-xs">
-                            <a href="javascript:;">
-                                <img class="media-object" src="@individualMaterial.ThumbnailImageUrl" alt="@individualMaterial.Name">
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <h4 class="media-heading">@individualMaterial.Name</h4>
-                            <p class="help-block small-text">by @Html.Raw(authorNamesWithLink)</p>
-
-                            @individualMaterial.Summary
-
-                            <div class="vertical-space-30px">
-                                <div class="btn-group" role="group" aria-label="Resources">
-                                    @foreach(var link in individualMaterial.Links)
-                                    {
-                                        <a class="btn btn-default" href="@link.Url" role="button" target="_blank"><i class="fa @MaterialType.MaterialTypeDic[link.Type]"></i> <span class="hidden-xs">@link.Type</span></a>
-                                    }
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                }
-
-                <!--<div class="row">
-                    <div class="col-md-3">
-                        <ul class="nav nav-pills nav-stacked" id="myTabs">
-                            <li class="active"><a href="#home" data-toggle="pill">Home</a></li>
-                            <li><a href="#profile" data-toggle="pill">Profile</a></li>
-                            <li><a href="#messages" data-toggle="pill">Messages</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-9">
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="home">Home</div>
-                            <div class="tab-pane" id="profile">Profile</div>
-                            <div class="tab-pane" id="messages">Messages</div>
-                        </div>
-                    </div>
-                </div>-->
-            </div>
-        </div>
-    </div>
-
-    <div id="sponsors" class="info-section">
-        <div class="container">
-            <div class="info-section-header">
-                <h2 class="underlined-heading margin-bottom-60 uppercase">Sponsors</h2>
-            </div>
+        <section id="sponsors">
+          <div class="container">
             <div class="info-section-description">
                 <div class="sponsor-logos">
                     <img src="images/sponsor-jetbrains.png" class="sponsor-logo" />
@@ -195,11 +281,101 @@
                     <img src="images/sponsor-microsoft.png" class="sponsor-logo-last" />
                 </div>
             </div>
-        </div>
-    </div>
-</div>
+          </div>
+        </section>
 
-@section scripts {
+      </section>
+    </main>
+
+
+
+  </div>
+
+  <footer class="globalFooter withCards">
+
+    <article class="footer-paragraph container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="content">
+            <h1 class="title">
+              <span class="subtitle">Ready to contribute in Singapore .NET Community?</span> Join us now or attend our meetups.
+            </h1>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="general-button-group buttons">
+
+            <a class="general-button general-button--default" href="https://www.facebook.com/groups/sg.netdev">
+              Join Us Now
+            </a>
+
+            <a href="https://www.meetup.com/NET-Developers-SG" class="general-button">
+              Attend Our Meetups
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </article>
+
+
+
+    <article class="globalFooterNav">
+      <div class="container-lg">
+
+        <ul>
+
+          <li>
+            <a class="rootLink" href="https://www.facebook.com/groups/sg.netdev" target="_blank">
+              Community Facebook Group
+            </a>
+          </li>
+
+          <li>
+            <a class="rootLink" href="https://www.meetup.com/NET-Developers-SG" target="_blank">
+              Community Meetup
+            </a>
+          </li>
+          
+          <li class="copyright">© 2016 .NET Developers Community SG</li>
+        </ul>
+
+      </div>
+    </article>
+
+
+  </footer>
+
+    <environment names="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/jquery-ui/jquery-ui.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+        
+
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/js/popup-image.js" asp-append-version="true"></script>
+        <script src="~/js/show-more.js" asp-append-version="true"></script>
+        <script src="~/js/header-scroll.js" asp-append-version="true"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.3.min.js" asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+            asp-fallback-test="window.jQuery">
+        </script>
+        <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js" asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+            asp-fallback-test="jQuery.ui"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js" asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+            asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
+        </script>
+        
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyASOH8DUiLOI6lGdbhzKg0Cd1c0vjAIAZA">
+    </script>
+
     <script>
 
         @foreach(var individualEvent in meetupEvents) 
@@ -229,6 +405,7 @@
         
         $('.show-more-section').showmore({collapsedHeight: '400px',});
     </script>
-}
 
+</body>
 
+</html>
