@@ -819,6 +819,7 @@ main header {
 #meetups {
     position: relative;
     padding-top: 110px;
+    background: #f6f9fc;
 }
 
     #meetups:before {
@@ -826,9 +827,14 @@ main header {
         position: absolute;
         z-index: -1;
         width: 100%;
-        height: 180%;
+        height: 100%;
         top: 0;
-        transform: skewY(-12deg);
+        transform: skewY(-6deg);
+        -webkit-transform-origin: 0 0;
+        -moz-transform-origin: 0 0;
+        -ms-transform-origin: 0 0;
+        -o-transform-origin: 0 0;
+        transform-origin: 0 0;
         background: #f6f9fc;
     }
 
