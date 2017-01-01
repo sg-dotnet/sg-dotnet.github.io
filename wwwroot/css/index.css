@@ -705,7 +705,6 @@ main header {
 }
 
 #primary {
-    overflow: hidden;
     margin-top: 0;
 }
 
@@ -723,7 +722,6 @@ main header {
 
 @media (min-width:670px) {
     #primary {
-        overflow: hidden;
         margin-top: -120px;
     }
 }
