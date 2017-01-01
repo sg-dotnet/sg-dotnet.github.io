@@ -640,8 +640,7 @@ main header {
 }
 
 .header-image {
-    width: 500px; 
-    height: 281px;
+    width: 500px;
     margin-bottom: 20px;
 }
 
@@ -676,8 +675,7 @@ main header {
 
 @media (max-width:1025px) {
     .header-image {
-        width: 400px; 
-        height: 224px;
+        width: 400px;
         margin-bottom: 20px;
     }
 
