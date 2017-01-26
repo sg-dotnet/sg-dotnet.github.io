@@ -365,8 +365,9 @@
         <script src="~/js/header-scroll.js" asp-append-version="true"></script>
     </environment>
     <environment names="Staging,Production">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.3.min.js" asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-            asp-fallback-test="window.jQuery">
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous" asp-fallback-src="~/lib/jquery/dist/jquery.min.js" asp-fallback-test="window.jQuery">
         </script>
         <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js" asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
             asp-fallback-test="jQuery.ui"></script>
