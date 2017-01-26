@@ -7,6 +7,9 @@ using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
 using CommunityWeb.Util;
+using Microsoft.Azure.Documents.Client;
+using System.Collections.Generic;
+using Microsoft.Azure.Documents.Linq;
 
 namespace CommunityWeb.Controllers
 {
@@ -38,6 +41,18 @@ namespace CommunityWeb.Controllers
             }
 
             ViewBag.MeetupEvents = meetupEvents;
+
+            var newDocumentDbConnector = new DocumentDbConnector(_appSettings.DotnetsgDocumentDbEndpoint, _appSettings.DotnetsgDocumentDbPrimaryKey,
+                _appSettings.DocumentDbDatabaseFeeds, _appSettings.DocumentDbCollectionFacebookGroupFeeds);
+
+            var query = newDocumentDbConnector.DocumentClient.CreateDocumentQuery<FacebookGroupFeed>
+		        (UriFactory.CreateDocumentCollectionUri(_appSettings.DocumentDbDatabaseFeeds, _appSettings.DocumentDbCollectionFacebookGroupFeeds)).AsDocumentQuery();
+            var results = new List<FacebookGroupFeed>();
+            while (query.HasMoreResults)
+            {
+                results.AddRange(await query.ExecuteNextAsync<FacebookGroupFeed>());
+            }
+            ViewBag.FacebookGroupFeeds = results.Count() > 0 ? results.ToList()[0].Feeds : null;
 
             return View();
         }

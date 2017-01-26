@@ -842,6 +842,12 @@ main header {
         position: relative;
     }
 
+.section-title-center {
+    margin-top: 60px;
+    text-align: center;
+    position: relative;
+}
+
 @media (min-width:670px) {
     #notebook {
         position: relative;

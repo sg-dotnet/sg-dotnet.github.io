@@ -5,7 +5,11 @@
     ViewData["Title"] = "dotnet.sg"; 
     Layout = null;
 
+    const int MAXIMUM_NUMBER_OF_FACEBOOK_FEEDS = 4;
+
     var meetupEvents = (IEnumerable<MeetupEvent>)ViewBag.MeetupEvents;
+
+    var facebookFeeds = (List<FacebookFeed>)ViewBag.FacebookGroupFeeds;
 }
 
 
@@ -214,7 +218,7 @@
                 {
                     <div class="row">
                         <div class="col-md-8">
-                            <h3>
+                            <h4>
                                 <a href="@individualEvent.MeetupPageUrl" target="_blank">@individualEvent.Name</a>
                                 <span class="larger-inline-spacing"></span>
                                 @if (individualEvent.HappensAtDateTime >= DateTime.Now) {
@@ -223,7 +227,7 @@
                                     <a href="javascript:;" class="btn btn-danger disabled" role="button">Event is over.</a>
                                 }
                                 
-                            </h3>
+                            </h4>
                             <p class="help-block">
                                 <i class="fa fa-calendar-o"></i> @individualEvent.HappensAtDateTime.ToString("yyyy-MM-dd HH:mm")
                                 <span class="larger-inline-spacing"></span>
@@ -247,34 +251,54 @@
       </section>
 
       <section id="secondary">
-        <div class="container hidden-xs">
-          <div class="row">
-            <div class="col-sm-6">
-              <h2 class="section-title">
-                Learning Materials
-              </h2>
-              <p class="common-paragraph">
-                List of materials shared during the meetup sessions. It also includes videos and articles about grand events related to .NET
-                development and other Microsoft technology.
-              </p>
-              <a class="common-paragraph general-link general-link--arrow" href="/learning-materials">
-                Learn more
-              </a>
+
+        <section id="facebook-topics">
+            <div class="container">
+                <h2 class="section-title section-title-center">
+                    Latest Topics on Our Facebook
+                </h2>
+                <p class="common-paragraph">
+                    @{ var facebookFeedsWithExternalLink = facebookFeeds
+                          .Where(f => !string.IsNullOrEmpty(f.ArticleUrl) && !string.IsNullOrEmpty(f.ArticleName) && !string.IsNullOrEmpty(f.ArticleDescription))
+                          .ToList(); 
+                    }
+
+                    <div class="row">
+                        @for(int f = 0; f < MAXIMUM_NUMBER_OF_FACEBOOK_FEEDS && f < facebookFeedsWithExternalLink.Count(); f++)
+                        {
+                            var currentFeed = facebookFeedsWithExternalLink[f];
+
+                            <div class="col-sm-6">
+                                <h4 class="section-title" style="margin-top: 20px;">
+                                    <a href="@currentFeed.ArticleUrl" target="_blank">
+                                        @currentFeed.ArticleName
+                                    </a>
+                                </h4>
+                                <div>
+                                    <img src="https://graph.facebook.com/v2.8/@currentFeed.Author.Id/picture" alt="@currentFeed.Author.Name"
+                                      class="img-circle" style="width: 20px;"/> 
+                                    Submitted by @currentFeed.Author.Name on @currentFeed.UpdatedTime.ToString("dd MMM yyyy")
+                                </div>
+                                <p class="common-paragraph">
+                                    @currentFeed.ArticleDescription
+                                </p>
+                                <a class="common-paragraph general-link general-link--arrow" href="@currentFeed.ArticleUrl" target="_blank">
+                                    Learn more
+                                </a>
+                            </div>
+                        }
+                    </div>
+                </p>
+
+                <div style="text-align: center; margin-top: 20px;">
+                    <a class="general-button general-button--default" href="https://www.facebook.com/groups/sg.netdev" target="_blank">
+                        Read More on Our Facebook Group
+                    </a>
+                </div>
             </div>
 
-            <div class="col-sm-6">
-              <h2 class="section-title">
-                Articles
-              </h2>
-              <p class="common-paragraph">
-                Blog feeds from several interesting and popular Microsoft technology blogs. Here you can find the latest updates of .NET Core, WPF, Microsoft Azure, etc. Enjoy reading!
-              </p>
-              <a class="common-paragraph general-link general-link--arrow" href="/blogs">
-                Learn more
-              </a>
-            </div>
-          </div>
-        </div>
+
+        </section>
         
 
         <section id="sponsors">
