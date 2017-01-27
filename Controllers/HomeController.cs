@@ -52,7 +52,7 @@ namespace CommunityWeb.Controllers
             {
                 results.AddRange(await query.ExecuteNextAsync<FacebookGroupFeed>());
             }
-            ViewBag.FacebookGroupFeeds = results.Count() > 0 ? results.ToList()[0].Feeds : null;
+            ViewBag.FacebookGroupFeeds = results.Count() > 0 ? results.ToList()[0].Feeds.OrderByDescending(x => x.UpdatedTime).ToList() : null;
 
             return View();
         }
