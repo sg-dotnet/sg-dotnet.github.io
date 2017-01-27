@@ -1,0 +1,146 @@
+@import 'partials/_colors.scss';
+@import 'partials/_header.scss';
+@import 'partials/_intro.scss';
+@import 'partials/_intro-images.scss';
+@import 'partials/_section-about-us.scss';
+@import 'partials/_section-meetups.scss';
+@import 'partials/_section-facebook-topics.scss';
+@import 'partials/_section-sponsors.scss';
+@import 'partials/_footer.scss';
+
+ol, ul {
+    list-style: none;
+}
+
+a, a:hover, a:active, a:visited {
+    text-decoration: none;
+}
+
+p {
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 26px;
+    color: #6b7c93;
+}
+
+code, pre {
+    font-family: Source Code Pro,Consolas,Menlo,monospace;
+}
+
+#brand{
+    font-size: 28px;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    max-width: 1040px;
+}
+
+.section-title {
+	line-height: 33px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .025em;
+	color: darken($primary-color, 30%);
+}
+
+.general-link {
+    color: $primary-color;
+    font-weight: 500;
+    transition: color .1s ease;
+    cursor: pointer;
+
+	&:hover, &:active {
+		color: darken($primary-color, 30%);
+		text-decoration: none;
+	}
+}
+
+.general-link--arrow:after {
+    font: normal 16px StripeIcons;
+    content: '\2192';
+    padding-left: 4px;
+}
+
+.general-button {
+    white-space: nowrap;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 14px;
+	box-shadow: 0 4px 6px transparentize(darken($white-color, 50%), 0.11),0 1px 3px transparentize(darken($white-color, 100%), 0.8);
+    background: $white-color;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .025em;
+    color: $primary-color;
+    margin-left: 10px;
+    margin-top: 10px;
+
+	&:hover{
+		color: darken($primary-color, 30%);
+        box-shadow: 0 0 2px 2px darken($white-color, 50%);
+	}
+
+	&:active {
+        color: darken($primary-color, 30%);
+        background-color: darken($white-color, 30%);
+        box-shadow: 0 4px 6px transparentize(darken($white-color, 50%), 0.11),0 1px 3px transparentize(darken($white-color, 100%), 0.8);
+    }
+}
+
+.general-button--default {
+    color: $white-color;
+    background: $primary-color;
+}
+
+    .general-button--default:hover {
+        color: $white-color;
+        background-color: $primary-color;
+    }
+
+    .general-button--default:active {
+        color: $white-color;
+        background-color: darken($primary-color, 30%);
+    }
+
+@mixin heading-icon () {
+    display: block;
+  	width: 66px;
+ 	height: 66px;
+}
+
+#primary {
+    margin-top: 0;
+
+	& .heading-icon {
+        margin: 0 auto;
+ 		margin-bottom: 30px;
+
+        @include heading-icon();
+    }
+}
+
+@media (min-width:670px) {
+    #primary {
+        margin-top: -220px;
+    }
+}
+
+#secondary {
+    margin-top: 40px;
+	
+	& .heading-icon {
+		margin-bottom: 25px;
+
+		@include heading-icon();
+	}
+
+	& p {
+		margin: 15px 0 18px;
+	}
+}

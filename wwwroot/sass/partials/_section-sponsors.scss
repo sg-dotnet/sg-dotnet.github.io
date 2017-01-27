@@ -1,0 +1,23 @@
+#sponsors{
+    margin: 60px 0;
+}
+
+.sponsor-logos{
+    text-align: center;
+}
+
+.sponsor-logo{
+    height: 90px;
+    margin-right: 60px;
+}
+
+.sponsor-logo-last{
+    height: 90px;
+}
+
+@media (max-width:320px) {
+    .sponsor-logo, .sponsor-logo-last{
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+}

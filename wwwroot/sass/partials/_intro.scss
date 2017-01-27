@@ -1,0 +1,145 @@
+#intro {
+    position: relative;
+
+	& .container {
+		padding-top: 70px;
+		padding-bottom: 100px;
+	}
+
+	& h1 {
+		font-size: 32px;
+		font-weight: 400;
+		color: #fff;
+	}
+
+	& p {
+		max-width: 500px;
+		margin-top: 20px;
+		color: #fff;
+	}
+
+	& .announcement {
+		display: -ms-inline-flexbox;
+		display: inline-flex;
+		-ms-flex-align: center;
+		align-items: center;
+		width: calc(100% + 20px * 2);
+		padding: 10px 20px;
+		margin: 0 0 30px -20px;
+		font-size: 14px;
+		line-height: 17px;
+		font-weight: 500;
+		color: darken($primary-color, 30%);
+		text-decoration: none;
+		background: $white-color;
+	}
+
+	& .announcement .new-pill {
+		padding: 0 6px;
+		font-size: 12px;
+		line-height: 16px;
+		font-weight: 600;
+		background: $primary-color;
+		text-transform: uppercase;
+		border-radius: 10px;
+		color: $white-color;
+	}
+
+	& .announcement:after {
+		content: '\27A2';
+		font: normal 16px StripeIcons;
+		position: relative;
+		bottom: 1px;
+	}
+
+	& .message {
+		-ms-flex: 1;
+		flex: 1;
+		margin: 0 12px;
+	}
+
+	& ul {
+		display: -ms-flexbox;
+		display: flex;
+		margin-top: 40px;
+	}
+
+	& li:first-child a {
+		margin-left: 0;
+		margin-right: 23px;
+		color: $white-color;
+		background: $success-color;
+		text-shadow: 0 1px 3px transparent(darken($success-color, 30%), 0.4);
+	}
+
+	& li:first-child svg {
+		position: relative;
+		top: 1px;
+		margin-right: 5px;
+	}
+
+	& li:last-child {
+		display: none;
+	}
+}
+
+@media (min-width:670px) {
+    #intro {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        height: 600px;
+
+		& .container {
+			margin-top: -15%;
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+
+		& p {
+			max-width: 100%;
+		}
+
+		& .announcement {
+			width: auto;
+		}
+
+		& .announcement {
+			line-height: 26px;
+			margin: 0 0 15px 0;
+			padding: 0 12px 0 5px;
+			border-radius: 15px;
+		}
+
+		& .message {
+			margin: 0 7px 0 6px;
+		}
+
+		& ul {
+			margin-top: 45px;
+		}
+
+		& li:last-child {
+			display: block;
+
+			& a {
+				color: $primary-color;
+			}
+		}
+    }
+}
+
+@media (min-width:880px) {
+    #intro {
+        height: 760px;
+
+		& h1 {
+			font-size: 40px;
+		}
+
+		& p {
+			max-width: 50%;
+		}
+    }
+}

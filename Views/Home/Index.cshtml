@@ -62,30 +62,28 @@
 </head>
 
 <body>
-  <header class="globalNav noDropdownTransition">
+  <header>
 
 
-    <div class="container-lg">
+    <div class="container">
       <ul class="navRoot">
 
 
-        <li class="navSection logo">
-          <a class="rootLink item-home colorize" href="/">
-            <h1 id="brand">
-              .NET SG
-            </h1>
+        <li class="navSectionLogo">
+          <a id="brand" href="/">
+            .NET SG
           </a>
         </li>
 
-        <li class="navSection primary">
-          <a class="rootLink colorize" href="/#about-us">About Us</a>
-          <a class="rootLink colorize" href="/#meetups">Meetups</a>
-          <a class="rootLink colorize" href="/learning-materials">Learning Materials</a>
-          <a class="rootLink colorize" href="/blogs">Articles</a>
+        <li class="navSectionPrimary">
+          <a  href="/#about-us">About Us</a>
+          <a href="/#meetups">Meetups</a>
+          <a href="/learning-materials">Learning Materials</a>
+          <a href="/blogs">Articles</a>
         </li>
 
-        <li class="navSection secondary">
-          <a class="rootLink item-proceed colorize" href="https://www.facebook.com/groups/sg.netdev" target="_blank">Join Us </a>
+        <li class="navSectionSecondary">
+          <a class="item-proceed" href="https://www.facebook.com/groups/sg.netdev" target="_blank">Join Us </a>
         </li>
       </ul>
     </div>
@@ -93,12 +91,13 @@
       <nav class="navbar">
         <div class="container">
           <div class="navbar-header">
+
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
-                              <span class="sr-only">Toggle navigation</span>
-                              <span class="icon-bar"></span>
-                              <span class="icon-bar"></span>
-                              <span class="icon-bar"></span>
-                          </button>
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
             
           </div>
 
@@ -120,10 +119,8 @@
   </header>
 
 
-  <div class="globalContent">
-
-    <main>
-      <header>
+  <main>
+      <div id="intro-header">
         <div id="dotnet">
           <span></span>
           <span></span>
@@ -133,7 +130,7 @@
         </div>
 
         <section id="intro">
-          <div class="container-lg">
+          <div class="container">
 
             <a class="announcement" href="http://www.hanselman.com/blog/FreeIntermediateASPNETCore10TrainingOnMicrosoftVirtualAcademy.aspx"
               target="_blank">
@@ -146,7 +143,7 @@
             <h1>
               Singapore .NET Developers Community
             </h1>
-            <p class="common-paragraph">
+            <p>
               We invite all of .NET developers based in Singapore to join this community and learn .NET starting from beginners to advanced.
               Here, we share the knowledge on .NET or .NET-related ecosystem, eg. Microsoft Azure + .NET.
             </p>
@@ -164,7 +161,7 @@
             </ul>
           </div>
         </section>
-      </header>
+      </div>
 
 
       <section id="photos" class="visible-lg visible-md">
@@ -173,23 +170,25 @@
         <img alt="Powershell Invoke-RestMethod vs IoT" src="images/meetup-banner-2.jpg" class="header-image" /><br />
       </section>
 
-      <section id="primary">
-        <section id="about-us" class="container-lg">
+      <div id="primary">
+        <section id="about-us" class="container">
           <h2 class="section-title">
             <span>
               Building Singapore .NET Development Ecosystem
             </span>
           </h2>
-          <p class="common-paragraph">
+          <p >
             In Singapore, the .NET ecosystem has not been as good as other countries. However, it does not mean there is no .NET developers or enterprises not using .NET. 
             In fact, most of the enterprises in Singapore are using .NET for their development.
           </p>
-          <p class="common-paragraph">
+          <p>
             Hence, in this community, we would like to group .NET developers and those who wants to learn .NET together to contribute to the .NET ecosystem in Singapore.
           </p>
-          <a class="common-paragraph general-link general-link--arrow" href="https://www.meetup.com/NET-Developers-SG">
-            Find out more about our meetups
-          </a>
+          <p>
+            <a class="general-link general-link--arrow" href="https://www.meetup.com/NET-Developers-SG">
+              Find out more about our meetups
+            </a>
+          </p>
         </section>
 
 
@@ -248,16 +247,16 @@
                 }
           </div>
         </section>
-      </section>
+      </div>
 
-      <section id="secondary">
+      <div id="secondary">
 
         <section id="facebook-topics">
             <div class="container">
-                <h2 class="section-title section-title-center">
+                <h2 class="section-title">
                     Latest Topics on Our Facebook
                 </h2>
-                <p class="common-paragraph">
+                <p>
                     @{ var facebookFeedsWithExternalLink = facebookFeeds
                           .Where(f => !string.IsNullOrEmpty(f.ArticleUrl) && !string.IsNullOrEmpty(f.ArticleName) && !string.IsNullOrEmpty(f.ArticleDescription))
                           .ToList(); 
@@ -279,10 +278,10 @@
                                       class="img-circle" style="width: 20px;"/> 
                                     Submitted by @currentFeed.Author.Name on @currentFeed.UpdatedTime.ToString("dd MMM yyyy")
                                 </div>
-                                <p class="common-paragraph">
+                                <p>
                                     @currentFeed.ArticleDescription
                                 </p>
-                                <a class="common-paragraph general-link general-link--arrow" href="@currentFeed.ArticleUrl" target="_blank">
+                                <a class="general-link general-link--arrow" href="@currentFeed.ArticleUrl" target="_blank">
                                     Learn more
                                 </a>
                             </div>
@@ -318,45 +317,35 @@
           </div>
         </section>
 
-      </section>
+      </div>
     </main>
 
+  <footer>
 
-
-  </div>
-
-  <footer class="globalFooter withCards">
-
-    <article class="footer-paragraph container">
+    <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <div class="content">
-            <h1 class="title">
-              <span class="subtitle">Ready to contribute in Singapore .NET Community?</span> Join us now or attend our meetups.
-            </h1>
-          </div>
+          <h2 class="title">
+            Ready to contribute in Singapore .NET Developers Community?
+          </h2>
         </div>
 
-        <div class="col-md-6">
-          <div class="general-button-group buttons">
-
+        <div class="buttons col-md-6">
             <a class="general-button general-button--default" href="https://www.facebook.com/groups/sg.netdev" target="_blank">
-              Join Us Now
+                Join Us Now
             </a>
 
             <a href="https://www.meetup.com/NET-Developers-SG" class="general-button" target="_blank">
-              Attend Our Meetups
+                Attend Our Meetups
             </a>
-
-          </div>
         </div>
       </div>
-    </article>
+    </div>
 
 
 
-    <article class="globalFooterNav">
-      <div class="container-lg">
+    <div class="footer-links">
+      <div class="container">
 
         <ul>
 
@@ -376,7 +365,7 @@
         </ul>
 
       </div>
-    </article>
+    </div>
 
 
   </footer>

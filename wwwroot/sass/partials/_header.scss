@@ -1,0 +1,114 @@
+header {
+    font-family: Camphor,Open Sans,Segoe UI,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    right: 0;
+    z-index: 500;
+    height: 50px;
+    perspective: 2000px;
+
+	& li {
+        list-style: none;
+    }
+
+	& a {
+        color: $white-color;
+		font-weight: 600;
+    }
+
+        & a:hover {
+            color: darken($white-color, 30%);
+        }
+
+	& > .container {
+        padding: 0;
+    }
+
+	& .navRoot {
+        position: relative;
+
+		& > li > a {
+			display: inline-block;
+			height: 50px;
+			white-space: nowrap;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			font-size: 17px;
+			line-height: 50px;
+			margin: 0;
+			padding: 0 25px;
+		}
+    }
+
+    & .navSectionLogo {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+	& .navSectionPrimary, & .navSectionSecondary {
+        display: none;
+    }
+
+	& .navSectionPrimary {
+		-ms-flex-pack: center;
+		justify-content: center;
+	}
+
+	& .navSectionPrimary > a {
+		cursor: pointer;
+	}
+
+	& .navSectionSecondary {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+}
+
+header .item-proceed:after {
+    font: normal 16px StripeIcons;
+    content: '\279E';
+    padding-left: 1px;
+}
+
+.navbar-toggle {
+	margin-top: -2px;
+}
+
+.container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse {
+	margin-top: 4px;
+}
+
+.navbar .navbar-toggle {
+    border-color: $white-color;
+}
+
+.navbar .navbar-toggle .icon-bar {
+    background-color: $white-color;
+}
+
+.navbar-collapse {
+    background-color: $white-color;
+    border-color: $primary-color;
+}
+
+.navbar-right-button {
+    color: $white-color !important;
+}
+
+#header-main-menu a {
+	color: $primary-color;
+}
+
+@media (min-width:670px) {
+    header .navSectionPrimary, header .navSectionSecondary {
+        display: -ms-flexbox;
+        display: flex;
+    }
+}
