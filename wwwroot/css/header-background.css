@@ -108,3 +108,9 @@
         background: #8815e1;
     }
 }
+
+@media (max-width:384px) {
+    #dotnet {
+        height: 120%;
+    }
+}

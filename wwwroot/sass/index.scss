@@ -131,6 +131,12 @@ code, pre {
 
 @media (min-width:670px) {
     #primary {
+        margin-top: -70px;
+    }
+}
+
+@media (min-width:880px) {
+    #primary {
         margin-top: -220px;
     }
 }

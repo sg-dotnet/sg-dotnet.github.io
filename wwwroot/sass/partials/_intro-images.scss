@@ -1,5 +1,5 @@
 .header-image {
-    width: 500px;
+    width: 90%;
     margin-bottom: 20px;
 }
 
@@ -7,7 +7,6 @@
     position: absolute;
     display: -ms-flexbox;
     display: flex;
-    width: 1287px;
     left: 50%;
     margin-left: -844px;
     transform-origin: 50% 20%;
@@ -26,7 +25,6 @@
 
 @media (min-width:880px) {
     #photos {
-        width: 829px;
         margin-left: 100px;
         top: 250px;
     }
