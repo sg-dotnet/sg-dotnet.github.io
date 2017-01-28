@@ -211,6 +211,8 @@
           <h2 class="section-title">
             Tech Meetups
           </h2>
+
+          <p></p>
           
           <div class="container">
                 @foreach(var individualEvent in meetupEvents) 
@@ -268,7 +270,7 @@
                             var currentFeed = facebookFeedsWithExternalLink[f];
 
                             <div class="col-sm-6">
-                                <h4 class="section-title" style="margin-top: 20px;">
+                                <h4 class="section-title">
                                     <a href="@currentFeed.ArticleUrl" target="_blank">
                                         @currentFeed.ArticleName
                                     </a>

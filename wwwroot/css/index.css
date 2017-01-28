@@ -89,11 +89,11 @@ header .item-proceed:after {
   #intro h1 {
     font-size: 32px;
     font-weight: 400;
-    color: #fff; }
+    color: #ffffff; }
   #intro p {
     max-width: 500px;
     margin-top: 20px;
-    color: #fff; }
+    color: #ffffff; }
   #intro .announcement {
     display: -ms-inline-flexbox;
     display: inline-flex;
@@ -227,9 +227,6 @@ header .item-proceed:after {
 
 #about-us .section-title {
   text-align: center; }
-
-#about-us > p {
-  padding-top: 35px; }
 
 #about-us .general-link {
   display: block; }
@@ -416,6 +413,9 @@ p {
 code, pre {
   font-family: Source Code Pro,Consolas,Menlo,monospace; }
 
+section p {
+  margin-top: 30px; }
+
 #brand {
   font-size: 28px; }
 
@@ -491,9 +491,13 @@ code, pre {
     width: 66px;
     height: 66px; }
 
+@media (min-width: 384px) {
+  #primary {
+    margin-top: -100px; } }
+
 @media (min-width: 670px) {
   #primary {
-    margin-top: -70px; } }
+    margin-top: -20px; } }
 
 @media (min-width: 880px) {
   #primary {
@@ -506,5 +510,3 @@ code, pre {
     display: block;
     width: 66px;
     height: 66px; }
-  #secondary p {
-    margin: 15px 0 18px; }

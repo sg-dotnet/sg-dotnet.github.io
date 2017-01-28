@@ -31,6 +31,12 @@ code, pre {
     font-family: Source Code Pro,Consolas,Menlo,monospace;
 }
 
+section {
+    & p {
+        margin-top: 30px;
+    }
+}
+
 #brand{
     font-size: 28px;
 }
@@ -129,9 +135,15 @@ code, pre {
     }
 }
 
+@media (min-width:384px) {
+    #primary {
+        margin-top: -100px;
+    }
+}
+
 @media (min-width:670px) {
     #primary {
-        margin-top: -70px;
+        margin-top: -20px;
     }
 }
 
@@ -148,9 +160,5 @@ code, pre {
 		margin-bottom: 25px;
 
 		@include heading-icon();
-	}
-
-	& p {
-		margin: 15px 0 18px;
 	}
 }

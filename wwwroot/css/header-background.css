@@ -4,7 +4,7 @@
 
 #dotnet {
     width: 100%;
-    height: 100%;
+    height: 730px;
     overflow: hidden;
     transform: skewY(6deg);
     margin-top: -90px;
@@ -37,9 +37,16 @@
         background: #e407ff;
     }
 
+@media (min-width:370px) {
+    #dotnet {
+        height: 600px;
+    }
+}
+
 @media (min-width:670px) {
     #dotnet {
         margin-top: -180px;
+        height: 700px;
     }
 
     #dotnet span {
@@ -106,11 +113,5 @@
         width: 33.33333%;
         bottom: 0;
         background: #8815e1;
-    }
-}
-
-@media (max-width:384px) {
-    #dotnet {
-        height: 120%;
     }
 }
