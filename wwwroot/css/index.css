@@ -399,6 +399,9 @@ footer {
     flex-basis: auto;
     margin: 0 0 20px; } }
 
+html, body {
+  overflow-x: hidden; }
+
 ol, ul {
   list-style: none; }
 

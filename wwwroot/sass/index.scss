@@ -8,6 +8,10 @@
 @import 'partials/_section-sponsors.scss';
 @import 'partials/_footer.scss';
 
+html, body{
+    overflow-x: hidden;
+}
+
 ol, ul {
     list-style: none;
 }

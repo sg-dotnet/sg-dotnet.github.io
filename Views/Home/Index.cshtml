@@ -410,6 +410,7 @@
                 var mapOptions = {
                     scrollwheel: false,
                     center: myLatlng,
+                    draggable: !("ontouchend" in document),
                     zoom: 16
                 };
 
