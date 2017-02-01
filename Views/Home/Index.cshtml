@@ -260,7 +260,9 @@
                 </h2>
                 <p>
                     @{ var facebookFeedsWithExternalLink = facebookFeeds
-                          .Where(f => !string.IsNullOrEmpty(f.ArticleUrl) && !string.IsNullOrEmpty(f.ArticleName) && !string.IsNullOrEmpty(f.ArticleDescription))
+                          .Where(f => !string.IsNullOrEmpty(f.ArticleUrl) && 
+                            !string.IsNullOrEmpty(f.ArticleName) && 
+                            (!string.IsNullOrEmpty(f.ArticleDescription) || !string.IsNullOrEmpty(f.Message)))
                           .ToList(); 
                     }
 
@@ -281,7 +283,14 @@
                                     Submitted by @currentFeed.Author.Name on @currentFeed.UpdatedTime.ToString("dd MMM yyyy")
                                 </div>
                                 <p>
-                                    @currentFeed.ArticleDescription
+                                    @if (string.IsNullOrWhiteSpace(@currentFeed.Message))
+                                    {
+                                        @:@currentFeed.ArticleDescription
+                                    } 
+                                    else 
+                                    {
+                                        @:@currentFeed.Message
+                                    }
                                 </p>
                                 <a class="general-link general-link--arrow" href="@currentFeed.ArticleUrl" target="_blank">
                                     Learn more
