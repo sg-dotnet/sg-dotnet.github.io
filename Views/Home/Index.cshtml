@@ -223,7 +223,7 @@
                                 <a href="@individualEvent.MeetupPageUrl" target="_blank">@individualEvent.Name</a>
                                 <span class="larger-inline-spacing"></span>
                                 @if (individualEvent.HappensAtDateTime >= DateTime.Now) {
-                                    <a href="individualEvent.MeetupPageUrl" class="btn btn-success" role="button" target="_blank"><i class="fa fa-thumbs-up"></i> Join Us!</a>
+                                    <a href="@individualEvent.MeetupPageUrl" class="btn btn-success" role="button" target="_blank"><i class="fa fa-thumbs-up"></i> Join Us!</a>
                                 } else {
                                     <a href="javascript:;" class="btn btn-danger disabled" role="button">Event is over.</a>
                                 }
