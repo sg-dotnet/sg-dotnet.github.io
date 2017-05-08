@@ -23,7 +23,7 @@ namespace CommunityWeb.Controllers
         public async Task<IActionResult> Index()
         {
             var meetupEvents = (await JsonParser<MeetupEvent>.RetrieveJsonDataFromUrlAsync(
-                "https://api.meetup.com/NET-Developers-SG/events?key=" + _appSettings.MeetupWebApiKey + "&scroll=recent_past"));
+                "https://api.meetup.com/NET-Developers-SG/events?key=" + _appSettings.MeetupWebApiKey + "&scroll=future_or_past"));
 
             foreach (var meetupEvent in meetupEvents)
             {
