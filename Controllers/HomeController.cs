@@ -35,7 +35,7 @@ namespace CommunityWeb.Controllers
                 DateTime start = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
                 meetupEvent.HappensAtDateTime = start.AddMilliseconds(unixDate).ToLocalTime();
 		
-		isNoUpcomingEvent = isNoUpcomingEvent && individualEvent.HappensAtDateTime < DateTime.Now;
+		isNoUpcomingEvent = isNoUpcomingEvent && meetupEvent.HappensAtDateTime < DateTime.Now;
             }
 	    
 	    if (isNoUpcomingEvent && meetupEvents.Count() > 1) 
