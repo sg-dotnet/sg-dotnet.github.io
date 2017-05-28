@@ -27,12 +27,21 @@ namespace CommunityWeb.Controllers
 		.OrderByDescending(m => m.HappensAt)
 		.Take(2);
 
+	    bool isNoUpcomingEvent = true;
+	    
             foreach (var meetupEvent in meetupEvents)
             {
                 long unixDate = meetupEvent.HappensAt;
                 DateTime start = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
                 meetupEvent.HappensAtDateTime = start.AddMilliseconds(unixDate).ToLocalTime();
+		
+		isNoUpcomingEvent = isNoUpcomingEvent && individualEvent.HappensAtDateTime < DateTime.Now;
             }
+	    
+	    if (isNoUpcomingEvent && meetupEvents.Count() > 1) 
+	    {
+	        meetupEvents = meetupEvents.First();
+	    }
 
             ViewBag.MeetupEvents = meetupEvents;
 
