@@ -40,7 +40,7 @@ namespace CommunityWeb.Controllers
 	    
 	    if (isNoUpcomingEvent && meetupEvents.Count() > 1) 
 	    {
-	        meetupEvents = meetupEvents.First();
+	        meetupEvents = meetupEvents.Take(1);
 	    }
 
             ViewBag.MeetupEvents = meetupEvents;
